@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WildPals - Educational nature game for children ages 4-6. Explore 4 worlds, discover 56 animals, play 6 educational games. No ads, no tracking, COPPA compliant.">
+    <meta name="author" content="Mikhail Lesik">
+    <title>WildPals - Explore Nature with Your Little One!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #E8F5E9;
+            color: #2E7D32;
+            line-height: 1.6;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lang-btn {
+            padding: 8px 18px;
+            border: 2px solid #4CAF50;
+            border-radius: 20px;
+            background: white;
+            color: #4CAF50;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: #E8F5E9;
+            transform: translateY(-1px);
+        }
+
+        .lang-btn.active {
+            background: #4CAF50;
+            color: white;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 50%, #A5D6A7 100%);
+        }
+
+        .hero-emojis {
+            font-size: 48px;
+            margin-bottom: 16px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1B5E20;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .hero .tagline {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2E7D32;
+            margin-bottom: 8px;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: #558B2F;
+            font-weight: 400;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #1B5E20;
+            margin-bottom: 32px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-emoji {
+            font-size: 40px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            color: #1B5E20;
+            margin-bottom: 6px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #558B2F;
+        }
+
+        /* Download Section */
+        .download {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+        }
+
+        .download h2 {
+            font-size: 32px;
+            color: #1B5E20;
+            margin-bottom: 24px;
+        }
+
+        .store-badges {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .store-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            background: #1B5E20;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+        }
+
+        .store-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(27, 94, 32, 0.4);
+            background: #2E7D32;
+        }
+
+        .store-badge svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .store-badge-small {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .store-badge-big {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #1B5E20;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #81C784;
+        }
+
+        /* Language content visibility */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .tagline {
+                font-size: 20px;
+            }
+
+            .hero .subtitle {
+                font-size: 16px;
+            }
+
+            .hero-emojis {
+                font-size: 36px;
+            }
+
+            .features h2,
+            .download h2 {
+                font-size: 26px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-switcher {
+                gap: 4px;
+                padding: 8px 12px;
+            }
+
+            .lang-btn {
+                padding: 6px 14px;
+                font-size: 13px;
+            }
+
+            .store-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Language Switcher -->
+<nav class="lang-switcher" aria-label="Language selector">
+    <button class="lang-btn active" onclick="switchLang('en')" aria-label="English">EN</button>
+    <button class="lang-btn" onclick="switchLang('ru')" aria-label="Russian">RU</button>
+    <button class="lang-btn" onclick="switchLang('pt')" aria-label="Portuguese">PT</button>
+    <button class="lang-btn" onclick="switchLang('es')" aria-label="Spanish">ES</button>
+</nav>
+
+<!-- ==================== ENGLISH ==================== -->
+<div class="lang-content active" id="lang-en">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-emojis" aria-hidden="true">🦊 🐧 🦁 🐋</div>
+        <h1>WildPals</h1>
+        <p class="tagline">Explore Nature with Your Little One!</p>
+        <p class="subtitle">Educational game for children ages 4-6</p>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>Why Kids Love WildPals</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🌍</span>
+                <h3>4 Worlds to Explore</h3>
+                <p>Forest, Ocean, Savanna, and Arctic — each with unique animals and adventures</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🦁</span>
+                <h3>56 Amazing Animals</h3>
+                <p>Discover fascinating facts about real animals with fun illustrations</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🎮</span>
+                <h3>6 Fun Educational Games</h3>
+                <p>Puzzles, memory, counting, sorting, feeding, and sound recognition</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">📱</span>
+                <h3>Works Offline</h3>
+                <p>No internet needed — play anytime, anywhere</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🔒</span>
+                <h3>No Ads, No Tracking</h3>
+                <p>COPPA compliant. Your child's privacy is our top priority</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">👨‍👩‍👧</span>
+                <h3>Parental Controls</h3>
+                <p>Session timer, progress tracking, and a secure parent zone</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🌐</span>
+                <h3>4 Languages</h3>
+                <p>Available in Russian, English, Portuguese, and Spanish</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download -->
+    <section class="download">
+        <h2>Download WildPals</h2>
+        <div class="store-badges">
+            <a href="https://apps.apple.com/app/wildpals/id000000000" class="store-badge" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div>
+                    <span class="store-badge-small">Download on the</span>
+                    <span class="store-badge-big">App Store</span>
+                </div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.wildpals.app" class="store-badge" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.49c-.35-.55-.18-1.55-.18-1.55L12.68 12 3 2.06S2.83 1.06 3.18.51C3.5 0 4.28.28 4.28.28l10.94 6.33-3.54 3.39L3.18 23.49zM20.17 10.35l-3.26-1.88-3.87 3.53 3.87 3.53 3.26-1.88c1.17-.67 1.17-2.63 0-3.3zM4.28 23.72s-.78.28-1.1-.23l8.5-8.1 3.54 3.39L4.28 23.72zM12.68 12L4.28.28l10.94 4.94L12.68 12z"/></svg>
+                <div>
+                    <span class="store-badge-small">Get it on</span>
+                    <span class="store-badge-big">Google Play</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="support.html">Support</a>
+        </div>
+        <p class="copyright">&copy; 2026 Mikhail Lesik. All rights reserved.</p>
+    </footer>
+</div>
+
+<!-- ==================== RUSSIAN ==================== -->
+<div class="lang-content" id="lang-ru">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-emojis" aria-hidden="true">🦊 🐧 🦁 🐋</div>
+        <h1>WildPals</h1>
+        <p class="tagline">Исследуйте природу вместе с малышом!</p>
+        <p class="subtitle">Развивающая игра для детей 4-6 лет</p>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>Почему детям нравится WildPals</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🌍</span>
+                <h3>4 мира для исследования</h3>
+                <p>Лес, Океан, Саванна и Арктика — в каждом уникальные животные и приключения</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🦁</span>
+                <h3>56 удивительных животных</h3>
+                <p>Узнавайте интересные факты о настоящих животных с весёлыми иллюстрациями</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🎮</span>
+                <h3>6 увлекательных игр</h3>
+                <p>Пазлы, мемори, счёт, сортировка, кормление и угадай звук</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">📱</span>
+                <h3>Работает без интернета</h3>
+                <p>Интернет не нужен — играйте когда и где угодно</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🔒</span>
+                <h3>Без рекламы и отслеживания</h3>
+                <p>Соответствует COPPA. Конфиденциальность вашего ребёнка — наш приоритет</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">👨‍👩‍👧</span>
+                <h3>Родительский контроль</h3>
+                <p>Таймер сеанса, отслеживание прогресса и защищённая зона для родителей</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🌐</span>
+                <h3>4 языка</h3>
+                <p>Доступно на русском, английском, португальском и испанском</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download -->
+    <section class="download">
+        <h2>Скачать WildPals</h2>
+        <div class="store-badges">
+            <a href="https://apps.apple.com/app/wildpals/id000000000" class="store-badge" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div>
+                    <span class="store-badge-small">Загрузить из</span>
+                    <span class="store-badge-big">App Store</span>
+                </div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.wildpals.app" class="store-badge" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.49c-.35-.55-.18-1.55-.18-1.55L12.68 12 3 2.06S2.83 1.06 3.18.51C3.5 0 4.28.28 4.28.28l10.94 6.33-3.54 3.39L3.18 23.49zM20.17 10.35l-3.26-1.88-3.87 3.53 3.87 3.53 3.26-1.88c1.17-.67 1.17-2.63 0-3.3zM4.28 23.72s-.78.28-1.1-.23l8.5-8.1 3.54 3.39L4.28 23.72zM12.68 12L4.28.28l10.94 4.94L12.68 12z"/></svg>
+                <div>
+                    <span class="store-badge-small">Доступно в</span>
+                    <span class="store-badge-big">Google Play</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Политика конфиденциальности</a>
+            <a href="terms-of-use.html">Условия использования</a>
+            <a href="support.html">Поддержка</a>
+        </div>
+        <p class="copyright">&copy; 2026 Михаил Лесик. Все права защищены.</p>
+    </footer>
+</div>
+
+<!-- ==================== PORTUGUESE ==================== -->
+<div class="lang-content" id="lang-pt">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-emojis" aria-hidden="true">🦊 🐧 🦁 🐋</div>
+        <h1>WildPals</h1>
+        <p class="tagline">Explore a natureza com o seu pequeno!</p>
+        <p class="subtitle">Jogo educativo para criancas de 4 a 6 anos</p>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>Por que as criancas adoram o WildPals</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🌍</span>
+                <h3>4 mundos para explorar</h3>
+                <p>Floresta, Oceano, Savana e Artico — cada um com animais e aventuras unicos</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🦁</span>
+                <h3>56 animais incriveis</h3>
+                <p>Descubra fatos fascinantes sobre animais reais com ilustracoes divertidas</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🎮</span>
+                <h3>6 jogos educativos divertidos</h3>
+                <p>Quebra-cabecas, memoria, contagem, classificacao, alimentacao e sons</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">📱</span>
+                <h3>Funciona offline</h3>
+                <p>Sem necessidade de internet — jogue a qualquer hora, em qualquer lugar</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🔒</span>
+                <h3>Sem anuncios, sem rastreamento</h3>
+                <p>Em conformidade com a COPPA. A privacidade do seu filho e nossa prioridade</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">👨‍👩‍👧</span>
+                <h3>Controle parental</h3>
+                <p>Temporizador de sessao, acompanhamento do progresso e zona segura para pais</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🌐</span>
+                <h3>4 idiomas</h3>
+                <p>Disponivel em russo, ingles, portugues e espanhol</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download -->
+    <section class="download">
+        <h2>Baixar WildPals</h2>
+        <div class="store-badges">
+            <a href="https://apps.apple.com/app/wildpals/id000000000" class="store-badge" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div>
+                    <span class="store-badge-small">Baixar na</span>
+                    <span class="store-badge-big">App Store</span>
+                </div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.wildpals.app" class="store-badge" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.49c-.35-.55-.18-1.55-.18-1.55L12.68 12 3 2.06S2.83 1.06 3.18.51C3.5 0 4.28.28 4.28.28l10.94 6.33-3.54 3.39L3.18 23.49zM20.17 10.35l-3.26-1.88-3.87 3.53 3.87 3.53 3.26-1.88c1.17-.67 1.17-2.63 0-3.3zM4.28 23.72s-.78.28-1.1-.23l8.5-8.1 3.54 3.39L4.28 23.72zM12.68 12L4.28.28l10.94 4.94L12.68 12z"/></svg>
+                <div>
+                    <span class="store-badge-small">Disponivel no</span>
+                    <span class="store-badge-big">Google Play</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Politica de Privacidade</a>
+            <a href="terms-of-use.html">Termos de Uso</a>
+            <a href="support.html">Suporte</a>
+        </div>
+        <p class="copyright">&copy; 2026 Mikhail Lesik. Todos os direitos reservados.</p>
+    </footer>
+</div>
+
+<!-- ==================== SPANISH ==================== -->
+<div class="lang-content" id="lang-es">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-emojis" aria-hidden="true">🦊 🐧 🦁 🐋</div>
+        <h1>WildPals</h1>
+        <p class="tagline">!Explora la naturaleza con tu pequeno!</p>
+        <p class="subtitle">Juego educativo para ninos de 4 a 6 anos</p>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>Por que a los ninos les encanta WildPals</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🌍</span>
+                <h3>4 mundos por explorar</h3>
+                <p>Bosque, Oceano, Sabana y Artico — cada uno con animales y aventuras unicos</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🦁</span>
+                <h3>56 animales increibles</h3>
+                <p>Descubre datos fascinantes sobre animales reales con divertidas ilustraciones</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🎮</span>
+                <h3>6 juegos educativos divertidos</h3>
+                <p>Rompecabezas, memoria, conteo, clasificacion, alimentacion y sonidos</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">📱</span>
+                <h3>Funciona sin conexion</h3>
+                <p>Sin necesidad de internet — juega en cualquier momento y lugar</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🔒</span>
+                <h3>Sin anuncios, sin rastreo</h3>
+                <p>Cumple con COPPA. La privacidad de tu hijo es nuestra maxima prioridad</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">👨‍👩‍👧</span>
+                <h3>Control parental</h3>
+                <p>Temporizador de sesion, seguimiento del progreso y zona segura para padres</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji" aria-hidden="true">🌐</span>
+                <h3>4 idiomas</h3>
+                <p>Disponible en ruso, ingles, portugues y espanol</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download -->
+    <section class="download">
+        <h2>Descargar WildPals</h2>
+        <div class="store-badges">
+            <a href="https://apps.apple.com/app/wildpals/id000000000" class="store-badge" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div>
+                    <span class="store-badge-small">Descargar en</span>
+                    <span class="store-badge-big">App Store</span>
+                </div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.wildpals.app" class="store-badge" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.49c-.35-.55-.18-1.55-.18-1.55L12.68 12 3 2.06S2.83 1.06 3.18.51C3.5 0 4.28.28 4.28.28l10.94 6.33-3.54 3.39L3.18 23.49zM20.17 10.35l-3.26-1.88-3.87 3.53 3.87 3.53 3.26-1.88c1.17-.67 1.17-2.63 0-3.3zM4.28 23.72s-.78.28-1.1-.23l8.5-8.1 3.54 3.39L4.28 23.72zM12.68 12L4.28.28l10.94 4.94L12.68 12z"/></svg>
+                <div>
+                    <span class="store-badge-small">Disponible en</span>
+                    <span class="store-badge-big">Google Play</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Politica de Privacidad</a>
+            <a href="terms-of-use.html">Terminos de Uso</a>
+            <a href="support.html">Soporte</a>
+        </div>
+        <p class="copyright">&copy; 2026 Mikhail Lesik. Todos los derechos reservados.</p>
+    </footer>
+</div>
+
+<!-- Language Switcher Script -->
+<script>
+    function switchLang(lang) {
+        // Hide all language content
+        document.querySelectorAll('.lang-content').forEach(function(el) {
+            el.classList.remove('active');
+        });
+        // Deactivate all buttons
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        // Show selected language content
+        var content = document.getElementById('lang-' + lang);
+        if (content) {
+            content.classList.add('active');
+        }
+        // Activate selected button
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            if (btn.textContent.trim() === lang.toUpperCase()) {
+                btn.classList.add('active');
+            }
+        });
+        // Update html lang attribute
+        var langMap = { en: 'en', ru: 'ru', pt: 'pt-BR', es: 'es' };
+        document.documentElement.lang = langMap[lang] || lang;
+        // Save preference
+        try {
+            localStorage.setItem('wildpals-lang', lang);
+        } catch (e) {
+            // localStorage may not be available
+        }
+    }
+
+    // Restore saved language or detect from browser
+    (function() {
+        var saved = null;
+        try {
+            saved = localStorage.getItem('wildpals-lang');
+        } catch (e) {}
+
+        if (saved && document.getElementById('lang-' + saved)) {
+            switchLang(saved);
+        } else {
+            var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            if (browserLang.startsWith('ru')) {
+                switchLang('ru');
+            } else if (browserLang.startsWith('pt')) {
+                switchLang('pt');
+            } else if (browserLang.startsWith('es')) {
+                switchLang('es');
+            }
+            // English is default, already active
+        }
+    })();
+</script>
+
+</body>
+</html>

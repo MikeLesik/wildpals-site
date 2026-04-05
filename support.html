@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — WildPals</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+    background: #FAFAFA;
+  }
+  h1 { color: #2E7D32; margin-bottom: 4px; }
+  h2 { color: #4CAF50; margin-top: 2em; }
+  h3 { color: #616161; }
+  .subtitle { color: #666; margin-top: 0; margin-bottom: 24px; }
+  .highlight {
+    background: #E8F5E9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  .lang-switch {
+    text-align: center;
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .lang-switch button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #E8F5E9;
+    color: #2E7D32;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .lang-switch button:hover {
+    background: #C8E6C9;
+  }
+  .lang-switch button.active {
+    background: #4CAF50;
+    color: #fff;
+    border-color: #2E7D32;
+  }
+  .contact-card {
+    background: #E8F5E9;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    margin: 24px 0;
+  }
+  .contact-card .email-link {
+    display: inline-block;
+    background: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+    transition: background 0.2s;
+  }
+  .contact-card .email-link:hover {
+    background: #388E3C;
+  }
+  .contact-card p { margin: 6px 0; }
+  .faq-item {
+    background: #fff;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .faq-question {
+    padding: 16px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #2E7D32;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+  .faq-question:hover { background: #F1F8E9; }
+  .faq-question::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+    flex-shrink: 0;
+    margin-left: 12px;
+    transition: transform 0.2s;
+  }
+  .faq-item.open .faq-question::after {
+    content: '\2212';
+  }
+  .faq-answer {
+    display: none;
+    padding: 0 20px 16px 20px;
+    color: #555;
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-answer { display: block; }
+  .troubleshooting-step {
+    background: #fff;
+    border-left: 4px solid #4CAF50;
+    padding: 12px 16px;
+    margin: 12px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .troubleshooting-step strong { color: #2E7D32; }
+  .links-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .links-section a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #E8F5E9;
+    color: #2E7D32;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .links-section a:hover { background: #C8E6C9; }
+  ul { padding-left: 20px; }
+  footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #E0E0E0;
+    color: #9E9E9E;
+    font-size: 14px;
+    text-align: center;
+  }
+  .lang-content { display: none; }
+  .lang-content.active { display: block; }
+
+  @media (max-width: 480px) {
+    body { padding: 16px; }
+    .contact-card { padding: 16px; }
+    .faq-question { padding: 14px 16px; font-size: 15px; }
+    .faq-answer { padding: 0 16px 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <button onclick="switchLang('en')" id="btn-en" class="active">English</button>
+  <button onclick="switchLang('ru')" id="btn-ru">Русский</button>
+  <button onclick="switchLang('pt')" id="btn-pt">Portugues</button>
+  <button onclick="switchLang('es')" id="btn-es">Espanol</button>
+</div>
+
+<!-- ==================== ENGLISH ==================== -->
+<div id="lang-en" class="lang-content active">
+
+<h1>Support</h1>
+<p class="subtitle"><strong>WildPals — Nature Learning App for Kids</strong></p>
+
+<div class="contact-card">
+  <p><strong>Need help? We're here for you!</strong></p>
+  <p>Send us an email and we'll get back to you as soon as possible.</p>
+  <a href="mailto:lesikom@gmail.com" class="email-link">lesikom@gmail.com</a>
+  <p style="margin-top: 12px; color: #666; font-size: 14px;">Typical response time: 24–48 hours</p>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">How do I restore my purchases?</div>
+  <div class="faq-answer">
+    <p>If you reinstalled the app or switched to a new device, your subscription can be restored easily:</p>
+    <ul>
+      <li>Open the app and go to the <strong>Parent Zone</strong> (hold the lock icon for 3 seconds and solve the math problem).</li>
+      <li>Navigate to the <strong>Subscription</strong> tab.</li>
+      <li>Tap <strong>"Restore Purchases"</strong>.</li>
+    </ul>
+    <p>Make sure you are signed in with the same Apple ID or Google account that was used for the original purchase. If the restoration doesn't work, try restarting the app and attempting again. If the issue persists, contact us at <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a>.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">How do I cancel my subscription?</div>
+  <div class="faq-answer">
+    <p>Subscriptions are managed through your device's app store, not within WildPals directly:</p>
+    <p><strong>On iPhone/iPad:</strong></p>
+    <ul>
+      <li>Go to <strong>Settings</strong> &gt; tap your name at the top &gt; <strong>Subscriptions</strong>.</li>
+      <li>Find WildPals and tap <strong>Cancel Subscription</strong>.</li>
+    </ul>
+    <p><strong>On Android:</strong></p>
+    <ul>
+      <li>Open the <strong>Google Play Store</strong> &gt; tap your profile icon &gt; <strong>Payments & subscriptions</strong> &gt; <strong>Subscriptions</strong>.</li>
+      <li>Find WildPals and tap <strong>Cancel</strong>.</li>
+    </ul>
+    <p>After cancellation, you will continue to have access to premium content until the end of the current billing period. No refunds are given for partial periods.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">The app won't load or keeps crashing</div>
+  <div class="faq-answer">
+    <p>We're sorry you're experiencing issues. Please try the following steps:</p>
+    <ul>
+      <li><strong>Close and reopen the app:</strong> Swipe the app away from the app switcher, then reopen it.</li>
+      <li><strong>Restart your device:</strong> A simple restart often fixes temporary glitches.</li>
+      <li><strong>Update the app:</strong> Make sure you have the latest version from the App Store or Google Play.</li>
+      <li><strong>Check storage:</strong> Ensure your device has enough free storage space (at least 200 MB).</li>
+      <li><strong>Reinstall:</strong> If nothing else works, uninstall and reinstall the app. Your subscription will be restored automatically when you sign in with the same account.</li>
+    </ul>
+    <p>If the problem continues, please email us at <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> with your device model and iOS/Android version, and we'll help you resolve it.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">How do I change the language?</div>
+  <div class="faq-answer">
+    <p>WildPals supports English, Russian, Portuguese, and Spanish. To change the language:</p>
+    <ul>
+      <li>Open the <strong>Parent Zone</strong> (hold the lock icon for 3 seconds and solve the math problem).</li>
+      <li>Go to the <strong>Settings</strong> tab.</li>
+      <li>Find the <strong>Language</strong> option and select your preferred language.</li>
+    </ul>
+    <p>The app will switch languages immediately. All game content, voice narration, and interface text will be displayed in the selected language.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">How do I delete my child's data?</div>
+  <div class="faq-answer">
+    <p>WildPals stores all data locally on your device. No personal data is ever sent to our servers. To delete all stored data:</p>
+    <ul>
+      <li>Open the <strong>Parent Zone</strong> (hold the lock icon for 3 seconds and solve the math problem).</li>
+      <li>Go to the <strong>Settings</strong> tab.</li>
+      <li>Scroll down and tap <strong>"Delete Child's Data"</strong>.</li>
+      <li>Confirm the deletion.</li>
+    </ul>
+    <p>This will permanently erase all game progress, unlocked animals, badges, and settings. Alternatively, uninstalling the app will also remove all data. Your subscription status is managed by Apple/Google and is not affected by data deletion.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">How do I use parental controls?</div>
+  <div class="faq-answer">
+    <p>WildPals includes built-in parental controls to keep your child safe:</p>
+    <ul>
+      <li><strong>Parental Gate:</strong> All settings, purchases, and external links are protected. To access them, hold the lock icon for 3 seconds, then solve a simple math problem. This prevents children from accidentally changing settings or making purchases.</li>
+      <li><strong>Session Timer:</strong> Set a daily play time limit (default is 20 minutes). When the timer runs out, the app gently reminds your child that playtime is over.</li>
+      <li><strong>Age Setting:</strong> Set your child's age (3–6) to automatically adjust game difficulty. Younger children get simpler tasks, older children get more challenging ones.</li>
+    </ul>
+    <p>Access all parental controls through the <strong>Parent Zone</strong> (the lock icon on the main screen).</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">What's included in the free version?</div>
+  <div class="faq-answer">
+    <p>WildPals is free to download and includes substantial content:</p>
+    <ul>
+      <li><strong>The Green Forest biome</strong> with 14 animals to discover</li>
+      <li><strong>All 7 types of mini-games:</strong> Memory, Puzzle, Counting, Sorting, Feeding, Sound Quiz, and Expeditions</li>
+      <li><strong>Up to 3 games per day</strong></li>
+      <li><strong>Full badge and achievement system</strong></li>
+      <li><strong>Animal album</strong> with facts and sounds</li>
+      <li><strong>Parental controls</strong> including session timer</li>
+    </ul>
+    <p>The free version is a complete experience with no ads.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">What does premium unlock?</div>
+  <div class="faq-answer">
+    <p>The premium subscription unlocks additional content for more learning adventures:</p>
+    <ul>
+      <li><strong>3 additional biomes:</strong> Blue Ocean, Hot Savanna, and Icy Arctic</li>
+      <li><strong>42 more animals</strong> to discover across all new biomes</li>
+      <li><strong>Unlimited daily games</strong> (no 3-game limit)</li>
+      <li><strong>Full expedition mode</strong> for all biomes</li>
+    </ul>
+    <p>Subscriptions are available monthly or yearly, with a 7-day free trial for first-time subscribers. All purchases are protected by the Parental Gate.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">How does the session timer work?</div>
+  <div class="faq-answer">
+    <p>The session timer helps parents manage screen time:</p>
+    <ul>
+      <li>The default time limit is <strong>20 minutes per session</strong>.</li>
+      <li>Parents can adjust the timer in the <strong>Parent Zone</strong> &gt; <strong>Settings</strong> (options: 10, 15, 20, 25, or 30 minutes).</li>
+      <li>When 5 minutes remain, a gentle reminder appears on screen.</li>
+      <li>When time is up, the app shows a friendly "time to rest" screen with a sleeping animal.</li>
+      <li>The timer resets when the app is fully closed and reopened.</li>
+    </ul>
+    <p>The timer is designed to encourage healthy screen habits without upsetting your child.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Is the app safe for children?</div>
+  <div class="faq-answer">
+    <p>Absolutely. WildPals is designed with children's safety as the top priority:</p>
+    <ul>
+      <li><strong>No ads</strong> of any kind, ever.</li>
+      <li><strong>No personal data collection.</strong> All data stays on your device.</li>
+      <li><strong>No social features or chat.</strong> Children cannot communicate with anyone.</li>
+      <li><strong>No external links</strong> accessible to children. All links are behind the Parental Gate.</li>
+      <li><strong>No tracking or behavioral profiling.</strong></li>
+      <li><strong>COPPA compliant</strong> (Children's Online Privacy Protection Act).</li>
+      <li><strong>Apple Kids Category approved</strong> — meets the strictest safety standards.</li>
+      <li><strong>No-lose design:</strong> All games adapt to the child's level. There are no fail states or penalties.</li>
+    </ul>
+    <p>We built WildPals as parents ourselves, with the same level of care we would want for our own children.</p>
+  </div>
+</div>
+
+<h2>Troubleshooting</h2>
+
+<div class="troubleshooting-step">
+  <strong>Step 1: Close and reopen the app</strong>
+  <p>Swipe the app away from the app switcher (double-tap the Home button on older devices, or swipe up from the bottom on newer ones). Then open WildPals again.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Step 2: Update to the latest version</strong>
+  <p>Open the App Store (or Google Play), search for WildPals, and check if an update is available. We regularly release updates with bug fixes and improvements.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Step 3: Restart your device</strong>
+  <p>Turn your device off completely, wait a few seconds, then turn it back on. This clears temporary issues that can cause apps to misbehave.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Step 4: Check available storage</strong>
+  <p>Go to your device settings and check how much free storage you have. WildPals needs at least 200 MB of free space to run smoothly.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Step 5: Reinstall the app</strong>
+  <p>If nothing else works, uninstall WildPals and reinstall it from the App Store or Google Play. Your subscription will be automatically restored when you sign in with the same account. Note: game progress will be reset.</p>
+</div>
+
+<div class="highlight">
+  <strong>Still having trouble?</strong> Email us at <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> with a description of the problem, your device model (e.g., iPhone 13, Samsung Galaxy S23), and your operating system version. We'll do our best to help within 24–48 hours.
+</div>
+
+<h2>Legal</h2>
+<div class="links-section">
+  <a href="../privacy-policy.html">Privacy Policy</a>
+  <a href="../terms-of-service.html">Terms of Service</a>
+</div>
+
+<footer>
+  <p>WildPals is developed by Mikhail Lesik, Spain.</p>
+  <p>&copy; 2026 WildPals. All rights reserved.</p>
+</footer>
+
+</div>
+
+<!-- ==================== RUSSIAN ==================== -->
+<div id="lang-ru" class="lang-content">
+
+<h1>Поддержка</h1>
+<p class="subtitle"><strong>WildPals — Обучающее приложение о природе для детей</strong></p>
+
+<div class="contact-card">
+  <p><strong>Нужна помощь? Мы рады помочь!</strong></p>
+  <p>Напишите нам на электронную почту, и мы ответим как можно скорее.</p>
+  <a href="mailto:lesikom@gmail.com" class="email-link">lesikom@gmail.com</a>
+  <p style="margin-top: 12px; color: #666; font-size: 14px;">Среднее время ответа: 24–48 часов</p>
+</div>
+
+<h2>Часто задаваемые вопросы</h2>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Как восстановить покупки?</div>
+  <div class="faq-answer">
+    <p>Если вы переустановили приложение или перешли на новое устройство, подписку можно легко восстановить:</p>
+    <ul>
+      <li>Откройте приложение и перейдите в <strong>Родительскую зону</strong> (удерживайте значок замка 3 секунды и решите математическую задачу).</li>
+      <li>Перейдите на вкладку <strong>Подписка</strong>.</li>
+      <li>Нажмите <strong>«Восстановить покупки»</strong>.</li>
+    </ul>
+    <p>Убедитесь, что вы вошли с тем же Apple ID или аккаунтом Google, который использовался для оригинальной покупки. Если восстановление не работает, перезапустите приложение и попробуйте снова. Если проблема сохраняется, напишите нам на <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a>.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Как отменить подписку?</div>
+  <div class="faq-answer">
+    <p>Управление подписками происходит через магазин приложений вашего устройства, а не внутри WildPals:</p>
+    <p><strong>На iPhone/iPad:</strong></p>
+    <ul>
+      <li>Перейдите в <strong>Настройки</strong> &gt; нажмите на ваше имя вверху &gt; <strong>Подписки</strong>.</li>
+      <li>Найдите WildPals и нажмите <strong>«Отменить подписку»</strong>.</li>
+    </ul>
+    <p><strong>На Android:</strong></p>
+    <ul>
+      <li>Откройте <strong>Google Play</strong> &gt; нажмите на значок профиля &gt; <strong>Платежи и подписки</strong> &gt; <strong>Подписки</strong>.</li>
+      <li>Найдите WildPals и нажмите <strong>«Отменить»</strong>.</li>
+    </ul>
+    <p>После отмены вы сохраните доступ к премиум-контенту до конца текущего расчётного периода. Возврат средств за неполный период не производится.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Приложение не загружается или вылетает</div>
+  <div class="faq-answer">
+    <p>Нам жаль, что у вас возникли проблемы. Пожалуйста, попробуйте следующие шаги:</p>
+    <ul>
+      <li><strong>Закройте и откройте приложение заново:</strong> Смахните приложение из списка запущенных приложений, затем откройте его снова.</li>
+      <li><strong>Перезагрузите устройство:</strong> Простая перезагрузка часто решает временные сбои.</li>
+      <li><strong>Обновите приложение:</strong> Убедитесь, что у вас последняя версия из App Store или Google Play.</li>
+      <li><strong>Проверьте память:</strong> Убедитесь, что на устройстве достаточно свободного места (минимум 200 МБ).</li>
+      <li><strong>Переустановите:</strong> Если ничего не помогает, удалите и заново установите приложение. Ваша подписка автоматически восстановится при входе с тем же аккаунтом.</li>
+    </ul>
+    <p>Если проблема сохраняется, напишите нам на <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a>, указав модель устройства и версию iOS/Android, и мы поможем вам решить проблему.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Как сменить язык?</div>
+  <div class="faq-answer">
+    <p>WildPals поддерживает английский, русский, португальский и испанский языки. Чтобы сменить язык:</p>
+    <ul>
+      <li>Откройте <strong>Родительскую зону</strong> (удерживайте значок замка 3 секунды и решите математическую задачу).</li>
+      <li>Перейдите на вкладку <strong>Настройки</strong>.</li>
+      <li>Найдите пункт <strong>Язык</strong> и выберите нужный язык.</li>
+    </ul>
+    <p>Приложение сразу переключится на выбранный язык. Весь игровой контент, озвучка и текст интерфейса будут отображаться на выбранном языке.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Как удалить данные ребёнка?</div>
+  <div class="faq-answer">
+    <p>WildPals хранит все данные локально на вашем устройстве. Никакие персональные данные не отправляются на наши серверы. Чтобы удалить все сохранённые данные:</p>
+    <ul>
+      <li>Откройте <strong>Родительскую зону</strong> (удерживайте значок замка 3 секунды и решите математическую задачу).</li>
+      <li>Перейдите на вкладку <strong>Настройки</strong>.</li>
+      <li>Прокрутите вниз и нажмите <strong>«Удалить данные ребёнка»</strong>.</li>
+      <li>Подтвердите удаление.</li>
+    </ul>
+    <p>Это безвозвратно удалит весь игровой прогресс, разблокированных животных, значки и настройки. Удаление приложения также удалит все данные. Статус вашей подписки управляется Apple/Google и не зависит от удаления данных.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Как использовать родительский контроль?</div>
+  <div class="faq-answer">
+    <p>WildPals включает встроенный родительский контроль для безопасности вашего ребёнка:</p>
+    <ul>
+      <li><strong>Родительский шлюз:</strong> Все настройки, покупки и внешние ссылки защищены. Чтобы получить к ним доступ, удерживайте значок замка 3 секунды, затем решите простую математическую задачу. Это не позволяет детям случайно менять настройки или совершать покупки.</li>
+      <li><strong>Таймер сессии:</strong> Установите дневной лимит времени (по умолчанию 20 минут). Когда время заканчивается, приложение мягко напоминает ребёнку, что пора отдохнуть.</li>
+      <li><strong>Настройка возраста:</strong> Укажите возраст ребёнка (3–6 лет) для автоматической подстройки сложности игр. Младшие дети получают более простые задания, старшие — более сложные.</li>
+    </ul>
+    <p>Все настройки родительского контроля доступны через <strong>Родительскую зону</strong> (значок замка на главном экране).</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Что включено в бесплатную версию?</div>
+  <div class="faq-answer">
+    <p>WildPals можно скачать бесплатно, и в нём есть полноценный контент:</p>
+    <ul>
+      <li><strong>Биом «Зелёный лес»</strong> с 14 животными для изучения</li>
+      <li><strong>Все 7 типов мини-игр:</strong> Память, Пазлы, Счёт, Сортировка, Кормление, Звуковая викторина и Экспедиции</li>
+      <li><strong>До 3 игр в день</strong></li>
+      <li><strong>Полная система значков и достижений</strong></li>
+      <li><strong>Альбом животных</strong> с фактами и звуками</li>
+      <li><strong>Родительский контроль</strong>, включая таймер сессии</li>
+    </ul>
+    <p>Бесплатная версия — это полноценный опыт без рекламы.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Что открывает премиум-подписка?</div>
+  <div class="faq-answer">
+    <p>Премиум-подписка открывает дополнительный контент для новых приключений:</p>
+    <ul>
+      <li><strong>3 дополнительных биома:</strong> Голубой океан, Жаркая саванна и Ледяная Арктика</li>
+      <li><strong>Ещё 42 животных</strong> для изучения во всех новых биомах</li>
+      <li><strong>Неограниченные ежедневные игры</strong> (без лимита в 3 игры)</li>
+      <li><strong>Полный режим экспедиций</strong> для всех биомов</li>
+    </ul>
+    <p>Подписка доступна помесячно или на год, с 7-дневным бесплатным пробным периодом для новых подписчиков. Все покупки защищены Родительским шлюзом.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Как работает таймер сессии?</div>
+  <div class="faq-answer">
+    <p>Таймер сессии помогает родителям контролировать экранное время:</p>
+    <ul>
+      <li>По умолчанию лимит — <strong>20 минут за сессию</strong>.</li>
+      <li>Родители могут настроить таймер в <strong>Родительской зоне</strong> &gt; <strong>Настройки</strong> (варианты: 10, 15, 20, 25 или 30 минут).</li>
+      <li>За 5 минут до окончания на экране появляется мягкое напоминание.</li>
+      <li>Когда время вышло, приложение показывает дружелюбный экран «пора отдохнуть» со спящим животным.</li>
+      <li>Таймер сбрасывается при полном закрытии и повторном открытии приложения.</li>
+    </ul>
+    <p>Таймер создан для формирования здоровых привычек использования экрана, не расстраивая ребёнка.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Безопасно ли приложение для детей?</div>
+  <div class="faq-answer">
+    <p>Безусловно. WildPals создан с приоритетом безопасности детей:</p>
+    <ul>
+      <li><strong>Никакой рекламы</strong> — вообще никогда.</li>
+      <li><strong>Нет сбора персональных данных.</strong> Все данные остаются на вашем устройстве.</li>
+      <li><strong>Нет социальных функций или чатов.</strong> Дети не могут общаться с кем-либо.</li>
+      <li><strong>Нет внешних ссылок</strong>, доступных детям. Все ссылки защищены Родительским шлюзом.</li>
+      <li><strong>Нет отслеживания и поведенческого профилирования.</strong></li>
+      <li><strong>Соответствие COPPA</strong> (Закон о защите конфиденциальности детей в интернете).</li>
+      <li><strong>Одобрено Apple для категории «Дети»</strong> — соответствует самым строгим стандартам безопасности.</li>
+      <li><strong>Дизайн без проигрышей:</strong> Все игры адаптируются к уровню ребёнка. Нет состояний неудачи или штрафов.</li>
+    </ul>
+    <p>Мы создали WildPals как родители, с той же заботой, которую хотели бы для собственных детей.</p>
+  </div>
+</div>
+
+<h2>Устранение неполадок</h2>
+
+<div class="troubleshooting-step">
+  <strong>Шаг 1: Закройте и откройте приложение заново</strong>
+  <p>Смахните приложение из списка запущенных (дважды нажмите кнопку «Домой» на старых устройствах или проведите вверх от нижнего края на новых). Затем откройте WildPals снова.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Шаг 2: Обновите до последней версии</strong>
+  <p>Откройте App Store (или Google Play), найдите WildPals и проверьте, доступно ли обновление. Мы регулярно выпускаем обновления с исправлениями ошибок и улучшениями.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Шаг 3: Перезагрузите устройство</strong>
+  <p>Полностью выключите устройство, подождите несколько секунд, затем включите его снова. Это устраняет временные проблемы, вызывающие сбои приложений.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Шаг 4: Проверьте свободное место</strong>
+  <p>Перейдите в настройки устройства и проверьте, сколько свободного места доступно. WildPals требует минимум 200 МБ свободного пространства для корректной работы.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Шаг 5: Переустановите приложение</strong>
+  <p>Если ничего не помогает, удалите WildPals и установите его заново из App Store или Google Play. Ваша подписка автоматически восстановится при входе с тем же аккаунтом. Обратите внимание: игровой прогресс будет сброшен.</p>
+</div>
+
+<div class="highlight">
+  <strong>Проблема не решена?</strong> Напишите нам на <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a>, указав описание проблемы, модель устройства (например, iPhone 13, Samsung Galaxy S23) и версию операционной системы. Мы постараемся помочь в течение 24–48 часов.
+</div>
+
+<h2>Юридическая информация</h2>
+<div class="links-section">
+  <a href="../privacy-policy.html">Политика конфиденциальности</a>
+  <a href="../terms-of-service.html">Условия использования</a>
+</div>
+
+<footer>
+  <p>WildPals разработан Михаилом Лесиком, Испания.</p>
+  <p>&copy; 2026 WildPals. Все права защищены.</p>
+</footer>
+
+</div>
+
+<!-- ==================== PORTUGUESE ==================== -->
+<div id="lang-pt" class="lang-content">
+
+<h1>Suporte</h1>
+<p class="subtitle"><strong>WildPals — Aplicativo Educativo sobre a Natureza para Criancas</strong></p>
+
+<div class="contact-card">
+  <p><strong>Precisa de ajuda? Estamos aqui para voce!</strong></p>
+  <p>Envie-nos um e-mail e responderemos o mais rapido possivel.</p>
+  <a href="mailto:lesikom@gmail.com" class="email-link">lesikom@gmail.com</a>
+  <p style="margin-top: 12px; color: #666; font-size: 14px;">Tempo de resposta tipico: 24–48 horas</p>
+</div>
+
+<h2>Perguntas Frequentes</h2>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como restaurar minhas compras?</div>
+  <div class="faq-answer">
+    <p>Se voce reinstalou o aplicativo ou trocou de dispositivo, sua assinatura pode ser restaurada facilmente:</p>
+    <ul>
+      <li>Abra o aplicativo e va para a <strong>Zona dos Pais</strong> (segure o icone de cadeado por 3 segundos e resolva o problema matematico).</li>
+      <li>Navegue ate a aba <strong>Assinatura</strong>.</li>
+      <li>Toque em <strong>"Restaurar Compras"</strong>.</li>
+    </ul>
+    <p>Certifique-se de estar conectado com o mesmo Apple ID ou conta Google usada na compra original. Se a restauracao nao funcionar, reinicie o aplicativo e tente novamente. Se o problema persistir, entre em contato conosco em <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a>.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como cancelar minha assinatura?</div>
+  <div class="faq-answer">
+    <p>As assinaturas sao gerenciadas pela loja de aplicativos do seu dispositivo, nao diretamente pelo WildPals:</p>
+    <p><strong>No iPhone/iPad:</strong></p>
+    <ul>
+      <li>Va em <strong>Ajustes</strong> &gt; toque no seu nome no topo &gt; <strong>Assinaturas</strong>.</li>
+      <li>Encontre WildPals e toque em <strong>"Cancelar Assinatura"</strong>.</li>
+    </ul>
+    <p><strong>No Android:</strong></p>
+    <ul>
+      <li>Abra a <strong>Google Play Store</strong> &gt; toque no icone do perfil &gt; <strong>Pagamentos e assinaturas</strong> &gt; <strong>Assinaturas</strong>.</li>
+      <li>Encontre WildPals e toque em <strong>"Cancelar"</strong>.</li>
+    </ul>
+    <p>Apos o cancelamento, voce continuara tendo acesso ao conteudo premium ate o final do periodo de cobranca atual. Nao ha reembolso para periodos parciais.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">O aplicativo nao carrega ou fica travando</div>
+  <div class="faq-answer">
+    <p>Lamentamos que voce esteja tendo problemas. Por favor, tente os seguintes passos:</p>
+    <ul>
+      <li><strong>Feche e reabra o aplicativo:</strong> Deslize o aplicativo para fora do alternador de apps e depois abra-o novamente.</li>
+      <li><strong>Reinicie seu dispositivo:</strong> Uma simples reinicializacao frequentemente resolve falhas temporarias.</li>
+      <li><strong>Atualize o aplicativo:</strong> Certifique-se de ter a versao mais recente da App Store ou Google Play.</li>
+      <li><strong>Verifique o armazenamento:</strong> Certifique-se de que seu dispositivo tem espaco livre suficiente (pelo menos 200 MB).</li>
+      <li><strong>Reinstale:</strong> Se nada mais funcionar, desinstale e reinstale o aplicativo. Sua assinatura sera restaurada automaticamente ao entrar com a mesma conta.</li>
+    </ul>
+    <p>Se o problema continuar, envie um e-mail para <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> com o modelo do seu dispositivo e a versao do iOS/Android, e ajudaremos a resolver.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como mudar o idioma?</div>
+  <div class="faq-answer">
+    <p>O WildPals suporta ingles, russo, portugues e espanhol. Para mudar o idioma:</p>
+    <ul>
+      <li>Abra a <strong>Zona dos Pais</strong> (segure o icone de cadeado por 3 segundos e resolva o problema matematico).</li>
+      <li>Va para a aba <strong>Configuracoes</strong>.</li>
+      <li>Encontre a opcao <strong>Idioma</strong> e selecione o idioma desejado.</li>
+    </ul>
+    <p>O aplicativo mudara de idioma imediatamente. Todo o conteudo dos jogos, narracao por voz e texto da interface serao exibidos no idioma selecionado.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como excluir os dados da crianca?</div>
+  <div class="faq-answer">
+    <p>O WildPals armazena todos os dados localmente no seu dispositivo. Nenhum dado pessoal e enviado aos nossos servidores. Para excluir todos os dados armazenados:</p>
+    <ul>
+      <li>Abra a <strong>Zona dos Pais</strong> (segure o icone de cadeado por 3 segundos e resolva o problema matematico).</li>
+      <li>Va para a aba <strong>Configuracoes</strong>.</li>
+      <li>Role para baixo e toque em <strong>"Excluir Dados da Crianca"</strong>.</li>
+      <li>Confirme a exclusao.</li>
+    </ul>
+    <p>Isso excluira permanentemente todo o progresso do jogo, animais desbloqueados, distintivos e configuracoes. Desinstalar o aplicativo tambem remove todos os dados. O status da sua assinatura e gerenciado pela Apple/Google e nao e afetado pela exclusao de dados.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como usar os controles parentais?</div>
+  <div class="faq-answer">
+    <p>O WildPals inclui controles parentais integrados para manter seu filho seguro:</p>
+    <ul>
+      <li><strong>Portao Parental:</strong> Todas as configuracoes, compras e links externos sao protegidos. Para acessa-los, segure o icone de cadeado por 3 segundos e resolva um problema matematico simples. Isso impede que criancas alterem configuracoes ou facam compras acidentalmente.</li>
+      <li><strong>Temporizador de Sessao:</strong> Defina um limite de tempo diario de uso (padrao de 20 minutos). Quando o tempo termina, o aplicativo lembra gentilmente a crianca que e hora de descansar.</li>
+      <li><strong>Configuracao de Idade:</strong> Defina a idade da crianca (3–6 anos) para ajustar automaticamente a dificuldade dos jogos. Criancas mais novas recebem tarefas mais simples, criancas mais velhas recebem desafios maiores.</li>
+    </ul>
+    <p>Acesse todos os controles parentais pela <strong>Zona dos Pais</strong> (o icone de cadeado na tela principal).</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">O que esta incluido na versao gratuita?</div>
+  <div class="faq-answer">
+    <p>O WildPals e gratuito para baixar e inclui conteudo substancial:</p>
+    <ul>
+      <li><strong>O bioma Floresta Verde</strong> com 14 animais para descobrir</li>
+      <li><strong>Todos os 7 tipos de mini-jogos:</strong> Memoria, Quebra-cabeca, Contagem, Classificacao, Alimentacao, Quiz de Sons e Expedicoes</li>
+      <li><strong>Ate 3 jogos por dia</strong></li>
+      <li><strong>Sistema completo de distintivos e conquistas</strong></li>
+      <li><strong>Album de animais</strong> com fatos e sons</li>
+      <li><strong>Controles parentais</strong> incluindo temporizador de sessao</li>
+    </ul>
+    <p>A versao gratuita e uma experiencia completa sem anuncios.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">O que o premium desbloqueia?</div>
+  <div class="faq-answer">
+    <p>A assinatura premium desbloqueia conteudo adicional para mais aventuras de aprendizado:</p>
+    <ul>
+      <li><strong>3 biomas adicionais:</strong> Oceano Azul, Savana Quente e Artico Gelado</li>
+      <li><strong>Mais 42 animais</strong> para descobrir em todos os novos biomas</li>
+      <li><strong>Jogos diarios ilimitados</strong> (sem limite de 3 jogos)</li>
+      <li><strong>Modo de expedicao completo</strong> para todos os biomas</li>
+    </ul>
+    <p>As assinaturas estao disponiveis mensalmente ou anualmente, com um periodo de teste gratuito de 7 dias para novos assinantes. Todas as compras sao protegidas pelo Portao Parental.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como funciona o temporizador de sessao?</div>
+  <div class="faq-answer">
+    <p>O temporizador de sessao ajuda os pais a gerenciar o tempo de tela:</p>
+    <ul>
+      <li>O limite de tempo padrao e <strong>20 minutos por sessao</strong>.</li>
+      <li>Os pais podem ajustar o temporizador na <strong>Zona dos Pais</strong> &gt; <strong>Configuracoes</strong> (opcoes: 10, 15, 20, 25 ou 30 minutos).</li>
+      <li>Quando faltam 5 minutos, um lembrete gentil aparece na tela.</li>
+      <li>Quando o tempo acaba, o aplicativo mostra uma tela amigavel de "hora de descansar" com um animal dormindo.</li>
+      <li>O temporizador e reiniciado quando o aplicativo e completamente fechado e reaberto.</li>
+    </ul>
+    <p>O temporizador foi projetado para incentivar habitos saudaveis de uso de tela sem chatear a crianca.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">O aplicativo e seguro para criancas?</div>
+  <div class="faq-answer">
+    <p>Absolutamente. O WildPals foi projetado com a seguranca das criancas como prioridade maxima:</p>
+    <ul>
+      <li><strong>Sem anuncios</strong> de qualquer tipo, nunca.</li>
+      <li><strong>Sem coleta de dados pessoais.</strong> Todos os dados ficam no seu dispositivo.</li>
+      <li><strong>Sem recursos sociais ou chat.</strong> As criancas nao podem se comunicar com ninguem.</li>
+      <li><strong>Sem links externos</strong> acessiveis a criancas. Todos os links estao atras do Portao Parental.</li>
+      <li><strong>Sem rastreamento ou perfil comportamental.</strong></li>
+      <li><strong>Em conformidade com COPPA</strong> (Lei de Protecao da Privacidade Online de Criancas).</li>
+      <li><strong>Aprovado pela Apple na Categoria Kids</strong> — atende aos padroes de seguranca mais rigorosos.</li>
+      <li><strong>Design sem derrota:</strong> Todos os jogos se adaptam ao nivel da crianca. Nao ha estados de falha ou penalidades.</li>
+    </ul>
+    <p>Criamos o WildPals como pais, com o mesmo nivel de cuidado que desejariamos para nossos proprios filhos.</p>
+  </div>
+</div>
+
+<h2>Solucao de Problemas</h2>
+
+<div class="troubleshooting-step">
+  <strong>Passo 1: Feche e reabra o aplicativo</strong>
+  <p>Deslize o aplicativo para fora do alternador de apps (toque duas vezes no botao Inicio em dispositivos antigos ou deslize para cima a partir da parte inferior em dispositivos mais novos). Depois abra o WildPals novamente.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Passo 2: Atualize para a versao mais recente</strong>
+  <p>Abra a App Store (ou Google Play), procure WildPals e verifique se ha uma atualizacao disponivel. Lancamos atualizacoes regularmente com correcoes de bugs e melhorias.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Passo 3: Reinicie seu dispositivo</strong>
+  <p>Desligue completamente seu dispositivo, espere alguns segundos e ligue-o novamente. Isso resolve problemas temporarios que podem causar mau funcionamento dos aplicativos.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Passo 4: Verifique o armazenamento disponivel</strong>
+  <p>Va para as configuracoes do seu dispositivo e verifique quanto espaco livre voce tem. O WildPals precisa de pelo menos 200 MB de espaco livre para funcionar corretamente.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Passo 5: Reinstale o aplicativo</strong>
+  <p>Se nada mais funcionar, desinstale o WildPals e reinstale-o da App Store ou Google Play. Sua assinatura sera restaurada automaticamente ao entrar com a mesma conta. Observacao: o progresso do jogo sera reiniciado.</p>
+</div>
+
+<div class="highlight">
+  <strong>Ainda com problemas?</strong> Envie um e-mail para <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> com uma descricao do problema, modelo do seu dispositivo (ex: iPhone 13, Samsung Galaxy S23) e versao do sistema operacional. Faremos o possivel para ajudar em 24–48 horas.
+</div>
+
+<h2>Juridico</h2>
+<div class="links-section">
+  <a href="../privacy-policy.html">Politica de Privacidade</a>
+  <a href="../terms-of-service.html">Termos de Servico</a>
+</div>
+
+<footer>
+  <p>WildPals e desenvolvido por Mikhail Lesik, Espanha.</p>
+  <p>&copy; 2026 WildPals. Todos os direitos reservados.</p>
+</footer>
+
+</div>
+
+<!-- ==================== SPANISH ==================== -->
+<div id="lang-es" class="lang-content">
+
+<h1>Soporte</h1>
+<p class="subtitle"><strong>WildPals — Aplicacion Educativa sobre la Naturaleza para Ninos</strong></p>
+
+<div class="contact-card">
+  <p><strong>Necesitas ayuda? Estamos aqui para ti!</strong></p>
+  <p>Envianos un correo electronico y te responderemos lo antes posible.</p>
+  <a href="mailto:lesikom@gmail.com" class="email-link">lesikom@gmail.com</a>
+  <p style="margin-top: 12px; color: #666; font-size: 14px;">Tiempo de respuesta tipico: 24–48 horas</p>
+</div>
+
+<h2>Preguntas Frecuentes</h2>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como restaurar mis compras?</div>
+  <div class="faq-answer">
+    <p>Si reinstalaste la aplicacion o cambiaste de dispositivo, tu suscripcion se puede restaurar facilmente:</p>
+    <ul>
+      <li>Abre la aplicacion y ve a la <strong>Zona de Padres</strong> (manten presionado el icono de candado durante 3 segundos y resuelve el problema matematico).</li>
+      <li>Navega a la pestana <strong>Suscripcion</strong>.</li>
+      <li>Toca <strong>"Restaurar Compras"</strong>.</li>
+    </ul>
+    <p>Asegurate de haber iniciado sesion con el mismo Apple ID o cuenta de Google que usaste para la compra original. Si la restauracion no funciona, reinicia la aplicacion e intentalo de nuevo. Si el problema persiste, contactanos en <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a>.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como cancelar mi suscripcion?</div>
+  <div class="faq-answer">
+    <p>Las suscripciones se gestionan a traves de la tienda de aplicaciones de tu dispositivo, no directamente en WildPals:</p>
+    <p><strong>En iPhone/iPad:</strong></p>
+    <ul>
+      <li>Ve a <strong>Ajustes</strong> &gt; toca tu nombre en la parte superior &gt; <strong>Suscripciones</strong>.</li>
+      <li>Encuentra WildPals y toca <strong>"Cancelar Suscripcion"</strong>.</li>
+    </ul>
+    <p><strong>En Android:</strong></p>
+    <ul>
+      <li>Abre <strong>Google Play Store</strong> &gt; toca el icono de perfil &gt; <strong>Pagos y suscripciones</strong> &gt; <strong>Suscripciones</strong>.</li>
+      <li>Encuentra WildPals y toca <strong>"Cancelar"</strong>.</li>
+    </ul>
+    <p>Despues de la cancelacion, seguiras teniendo acceso al contenido premium hasta el final del periodo de facturacion actual. No se realizan reembolsos por periodos parciales.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">La aplicacion no carga o se cierra inesperadamente</div>
+  <div class="faq-answer">
+    <p>Lamentamos que estes teniendo problemas. Por favor, prueba los siguientes pasos:</p>
+    <ul>
+      <li><strong>Cierra y vuelve a abrir la aplicacion:</strong> Desliza la aplicacion fuera del selector de apps y luego abrela de nuevo.</li>
+      <li><strong>Reinicia tu dispositivo:</strong> Un simple reinicio a menudo soluciona fallos temporales.</li>
+      <li><strong>Actualiza la aplicacion:</strong> Asegurate de tener la ultima version de la App Store o Google Play.</li>
+      <li><strong>Verifica el almacenamiento:</strong> Asegurate de que tu dispositivo tiene suficiente espacio libre (al menos 200 MB).</li>
+      <li><strong>Reinstala:</strong> Si nada mas funciona, desinstala y reinstala la aplicacion. Tu suscripcion se restaurara automaticamente al iniciar sesion con la misma cuenta.</li>
+    </ul>
+    <p>Si el problema continua, envianos un correo a <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> con el modelo de tu dispositivo y la version de iOS/Android, y te ayudaremos a resolverlo.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como cambiar el idioma?</div>
+  <div class="faq-answer">
+    <p>WildPals soporta ingles, ruso, portugues y espanol. Para cambiar el idioma:</p>
+    <ul>
+      <li>Abre la <strong>Zona de Padres</strong> (manten presionado el icono de candado durante 3 segundos y resuelve el problema matematico).</li>
+      <li>Ve a la pestana <strong>Configuracion</strong>.</li>
+      <li>Encuentra la opcion <strong>Idioma</strong> y selecciona el idioma deseado.</li>
+    </ul>
+    <p>La aplicacion cambiara de idioma inmediatamente. Todo el contenido de los juegos, la narracion por voz y el texto de la interfaz se mostraran en el idioma seleccionado.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como eliminar los datos del nino?</div>
+  <div class="faq-answer">
+    <p>WildPals almacena todos los datos localmente en tu dispositivo. Ningun dato personal se envia a nuestros servidores. Para eliminar todos los datos almacenados:</p>
+    <ul>
+      <li>Abre la <strong>Zona de Padres</strong> (manten presionado el icono de candado durante 3 segundos y resuelve el problema matematico).</li>
+      <li>Ve a la pestana <strong>Configuracion</strong>.</li>
+      <li>Desplazate hacia abajo y toca <strong>"Eliminar Datos del Nino"</strong>.</li>
+      <li>Confirma la eliminacion.</li>
+    </ul>
+    <p>Esto eliminara permanentemente todo el progreso del juego, animales desbloqueados, insignias y configuraciones. Desinstalar la aplicacion tambien elimina todos los datos. El estado de tu suscripcion es gestionado por Apple/Google y no se ve afectado por la eliminacion de datos.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como usar los controles parentales?</div>
+  <div class="faq-answer">
+    <p>WildPals incluye controles parentales integrados para mantener a tu hijo seguro:</p>
+    <ul>
+      <li><strong>Puerta Parental:</strong> Todas las configuraciones, compras y enlaces externos estan protegidos. Para acceder, manten presionado el icono de candado durante 3 segundos y resuelve un problema matematico simple. Esto evita que los ninos cambien configuraciones o realicen compras accidentalmente.</li>
+      <li><strong>Temporizador de Sesion:</strong> Establece un limite de tiempo diario de uso (por defecto 20 minutos). Cuando el tiempo se agota, la aplicacion recuerda amablemente al nino que es hora de descansar.</li>
+      <li><strong>Configuracion de Edad:</strong> Establece la edad del nino (3–6 anos) para ajustar automaticamente la dificultad de los juegos. Los ninos mas pequenos reciben tareas mas simples, los mayores reciben desafios mas grandes.</li>
+    </ul>
+    <p>Accede a todos los controles parentales a traves de la <strong>Zona de Padres</strong> (el icono de candado en la pantalla principal).</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Que incluye la version gratuita?</div>
+  <div class="faq-answer">
+    <p>WildPals es gratuito para descargar e incluye contenido sustancial:</p>
+    <ul>
+      <li><strong>El bioma Bosque Verde</strong> con 14 animales para descubrir</li>
+      <li><strong>Los 7 tipos de mini-juegos:</strong> Memoria, Rompecabezas, Conteo, Clasificacion, Alimentacion, Quiz de Sonidos y Expediciones</li>
+      <li><strong>Hasta 3 juegos por dia</strong></li>
+      <li><strong>Sistema completo de insignias y logros</strong></li>
+      <li><strong>Album de animales</strong> con datos curiosos y sonidos</li>
+      <li><strong>Controles parentales</strong> incluyendo temporizador de sesion</li>
+    </ul>
+    <p>La version gratuita es una experiencia completa sin anuncios.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Que desbloquea la version premium?</div>
+  <div class="faq-answer">
+    <p>La suscripcion premium desbloquea contenido adicional para mas aventuras de aprendizaje:</p>
+    <ul>
+      <li><strong>3 biomas adicionales:</strong> Oceano Azul, Sabana Caliente y Artico Helado</li>
+      <li><strong>42 animales mas</strong> para descubrir en todos los nuevos biomas</li>
+      <li><strong>Juegos diarios ilimitados</strong> (sin limite de 3 juegos)</li>
+      <li><strong>Modo de expedicion completo</strong> para todos los biomas</li>
+    </ul>
+    <p>Las suscripciones estan disponibles mensualmente o anualmente, con un periodo de prueba gratuito de 7 dias para nuevos suscriptores. Todas las compras estan protegidas por la Puerta Parental.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Como funciona el temporizador de sesion?</div>
+  <div class="faq-answer">
+    <p>El temporizador de sesion ayuda a los padres a gestionar el tiempo de pantalla:</p>
+    <ul>
+      <li>El limite de tiempo por defecto es <strong>20 minutos por sesion</strong>.</li>
+      <li>Los padres pueden ajustar el temporizador en la <strong>Zona de Padres</strong> &gt; <strong>Configuracion</strong> (opciones: 10, 15, 20, 25 o 30 minutos).</li>
+      <li>Cuando quedan 5 minutos, aparece un recordatorio amable en pantalla.</li>
+      <li>Cuando el tiempo se agota, la aplicacion muestra una pantalla amigable de "hora de descansar" con un animal durmiendo.</li>
+      <li>El temporizador se reinicia cuando la aplicacion se cierra completamente y se vuelve a abrir.</li>
+    </ul>
+    <p>El temporizador esta disenado para fomentar habitos saludables de uso de pantalla sin molestar al nino.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFaq(this)">Es segura la aplicacion para los ninos?</div>
+  <div class="faq-answer">
+    <p>Absolutamente. WildPals esta disenado con la seguridad de los ninos como maxima prioridad:</p>
+    <ul>
+      <li><strong>Sin anuncios</strong> de ningun tipo, nunca.</li>
+      <li><strong>Sin recopilacion de datos personales.</strong> Todos los datos permanecen en tu dispositivo.</li>
+      <li><strong>Sin funciones sociales ni chat.</strong> Los ninos no pueden comunicarse con nadie.</li>
+      <li><strong>Sin enlaces externos</strong> accesibles para los ninos. Todos los enlaces estan detras de la Puerta Parental.</li>
+      <li><strong>Sin rastreo ni perfil de comportamiento.</strong></li>
+      <li><strong>Cumple con COPPA</strong> (Ley de Proteccion de la Privacidad Infantil en Linea).</li>
+      <li><strong>Aprobado por Apple en la Categoria Kids</strong> — cumple con los estandares de seguridad mas estrictos.</li>
+      <li><strong>Diseno sin derrota:</strong> Todos los juegos se adaptan al nivel del nino. No hay estados de fallo ni penalizaciones.</li>
+    </ul>
+    <p>Creamos WildPals como padres, con el mismo nivel de cuidado que deseariamos para nuestros propios hijos.</p>
+  </div>
+</div>
+
+<h2>Solucion de Problemas</h2>
+
+<div class="troubleshooting-step">
+  <strong>Paso 1: Cierra y vuelve a abrir la aplicacion</strong>
+  <p>Desliza la aplicacion fuera del selector de apps (toca dos veces el boton Inicio en dispositivos antiguos o desliza hacia arriba desde la parte inferior en los mas nuevos). Luego abre WildPals de nuevo.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Paso 2: Actualiza a la ultima version</strong>
+  <p>Abre la App Store (o Google Play), busca WildPals y comprueba si hay una actualizacion disponible. Publicamos actualizaciones regularmente con correcciones de errores y mejoras.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Paso 3: Reinicia tu dispositivo</strong>
+  <p>Apaga completamente tu dispositivo, espera unos segundos y vuelvelo a encender. Esto resuelve problemas temporales que pueden causar que las aplicaciones no funcionen correctamente.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Paso 4: Verifica el almacenamiento disponible</strong>
+  <p>Ve a los ajustes de tu dispositivo y comprueba cuanto espacio libre tienes. WildPals necesita al menos 200 MB de espacio libre para funcionar correctamente.</p>
+</div>
+
+<div class="troubleshooting-step">
+  <strong>Paso 5: Reinstala la aplicacion</strong>
+  <p>Si nada mas funciona, desinstala WildPals y reinstalalo desde la App Store o Google Play. Tu suscripcion se restaurara automaticamente al iniciar sesion con la misma cuenta. Nota: el progreso del juego se reiniciara.</p>
+</div>
+
+<div class="highlight">
+  <strong>Sigues teniendo problemas?</strong> Envianos un correo a <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> con una descripcion del problema, el modelo de tu dispositivo (ej: iPhone 13, Samsung Galaxy S23) y la version del sistema operativo. Haremos lo posible por ayudarte en 24–48 horas.
+</div>
+
+<h2>Legal</h2>
+<div class="links-section">
+  <a href="../privacy-policy.html">Politica de Privacidad</a>
+  <a href="../terms-of-service.html">Terminos de Servicio</a>
+</div>
+
+<footer>
+  <p>WildPals es desarrollado por Mikhail Lesik, Espana.</p>
+  <p>&copy; 2026 WildPals. Todos los derechos reservados.</p>
+</footer>
+
+</div>
+
+<script>
+function switchLang(lang) {
+  // Hide all language sections
+  document.querySelectorAll('.lang-content').forEach(function(el) {
+    el.classList.remove('active');
+  });
+  // Deactivate all buttons
+  document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+    btn.classList.remove('active');
+  });
+  // Show selected language
+  document.getElementById('lang-' + lang).classList.add('active');
+  document.getElementById('btn-' + lang).classList.add('active');
+  // Update HTML lang attribute
+  var langMap = { en: 'en', ru: 'ru', pt: 'pt-BR', es: 'es' };
+  document.documentElement.lang = langMap[lang] || lang;
+  // Save preference
+  try { localStorage.setItem('wildpals-lang', lang); } catch(e) {}
+}
+
+function toggleFaq(el) {
+  var item = el.parentElement;
+  item.classList.toggle('open');
+}
+
+// Restore saved language preference
+(function() {
+  try {
+    var saved = localStorage.getItem('wildpals-lang');
+    if (saved && document.getElementById('lang-' + saved)) {
+      switchLang(saved);
+    }
+  } catch(e) {}
+})();
+</script>
+
+</body>
+</html>

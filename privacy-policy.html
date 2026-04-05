@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WildPals Privacy Policy — Children's Educational Game (Ages 4-6). COPPA & GDPR Compliant.">
+  <meta name="author" content="Mikhail Lesik">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>WildPals — Privacy Policy</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-primary: #4CAF50;
+      --color-primary-dark: #388E3C;
+      --color-primary-light: #C8E6C9;
+      --color-bg: #E8F5E9;
+      --color-bg-card: #FFFFFF;
+      --color-text: #2E3B2E;
+      --color-text-light: #5D6E5D;
+      --color-border: #A5D6A7;
+      --color-accent: #66BB6A;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 2px 12px rgba(76, 175, 80, 0.10);
+      --max-width: 720px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 20px 48px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 32px 0 16px;
+    }
+
+    .header .app-icon {
+      font-size: 56px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .header .subtitle {
+      font-size: 14px;
+      color: var(--color-text-light);
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px 0 28px;
+      flex-wrap: wrap;
+    }
+
+    .lang-btn {
+      padding: 8px 18px;
+      border: 2px solid var(--color-border);
+      border-radius: 24px;
+      background: var(--color-bg-card);
+      color: var(--color-text-light);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--color-accent);
+      color: var(--color-primary-dark);
+    }
+
+    .lang-btn.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #FFFFFF;
+    }
+
+    /* Content Sections */
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
+
+    .effective-date {
+      text-align: center;
+      font-size: 13px;
+      color: var(--color-text-light);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .summary-box {
+      background: var(--color-primary-light);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .summary-box .icon {
+      font-size: 36px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .summary-box p {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      line-height: 1.6;
+    }
+
+    .card {
+      background: var(--color-bg-card);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--color-primary-light);
+    }
+
+    .card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2 .section-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text);
+      margin: 14px 0 6px;
+    }
+
+    .card p {
+      margin-bottom: 10px;
+      color: var(--color-text);
+    }
+
+    .card ul {
+      margin: 8px 0 12px 20px;
+      color: var(--color-text);
+    }
+
+    .card ul li {
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+
+    .card ul li::marker {
+      color: var(--color-accent);
+    }
+
+    .no-collect-list li {
+      color: var(--color-text-light);
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    code {
+      background: #F1F8E9;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: var(--color-primary-dark);
+      font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+    }
+
+    /* Contact */
+    .contact-box {
+      background: var(--color-primary-light);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      margin-top: 28px;
+      border: 2px solid var(--color-border);
+    }
+
+    .contact-box .icon {
+      font-size: 32px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--color-primary-dark);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid var(--color-border);
+      transition: border-color 0.2s;
+    }
+
+    .contact-box a:hover {
+      border-color: var(--color-primary-dark);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 32px 0 16px;
+      font-size: 13px;
+      color: var(--color-text-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container {
+        padding: 16px 14px 36px;
+      }
+
+      .header h1 {
+        font-size: 22px;
+      }
+
+      .card {
+        padding: 18px 16px;
+      }
+
+      .summary-box {
+        padding: 16px 18px;
+      }
+
+      .lang-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <span class="app-icon" role="img" aria-label="WildPals">&#127795;</span>
+      <h1>WildPals</h1>
+      <p class="subtitle">Privacy Policy</p>
+    </div>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher" role="tablist" aria-label="Language selector">
+      <button class="lang-btn active" role="tab" aria-selected="true" data-lang="en" onclick="switchLang('en')">English</button>
+      <button class="lang-btn" role="tab" aria-selected="false" data-lang="ru" onclick="switchLang('ru')">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</button>
+      <button class="lang-btn" role="tab" aria-selected="false" data-lang="pt" onclick="switchLang('pt')">Portugu&#234;s</button>
+      <button class="lang-btn" role="tab" aria-selected="false" data-lang="es" onclick="switchLang('es')">Espa&#241;ol</button>
+    </div>
+
+    <!-- ==================== ENGLISH ==================== -->
+    <div class="lang-content active" id="content-en" lang="en">
+
+      <p class="effective-date">Effective Date: April 22, 2026</p>
+
+      <div class="summary-box">
+        <span class="icon" role="img" aria-label="Shield">&#128737;&#65039;</span>
+        <p>WildPals does NOT collect, store, or share any personal information from children. Your child's privacy is our top priority.</p>
+      </div>
+
+      <!-- 1. Introduction -->
+      <div class="card">
+        <h2><span class="section-icon">&#128220;</span> 1. Introduction</h2>
+        <p>WildPals is an educational game for children ages 4&ndash;6, developed by Mikhail Lesik (Spain). This Privacy Policy explains how we handle information in our app. We designed WildPals from the ground up to protect children's privacy.</p>
+        <p>This policy applies to all versions of the WildPals app available on the Apple App Store and Google Play Store.</p>
+      </div>
+
+      <!-- 2. COPPA & GDPR Compliance -->
+      <div class="card">
+        <h2><span class="section-icon">&#9989;</span> 2. Legal Compliance</h2>
+        <p>WildPals is designed to comply with:</p>
+        <ul>
+          <li><strong>USA:</strong> Children's Online Privacy Protection Act (COPPA), including the 2025 Final Rule effective April 22, 2026</li>
+          <li><strong>EU:</strong> General Data Protection Regulation (GDPR), including special provisions for children's data</li>
+          <li><strong>Apple:</strong> Kids Category guidelines and App Store Review Guidelines</li>
+        </ul>
+        <h3>We do NOT collect:</h3>
+        <ul class="no-collect-list">
+          <li>Names, usernames, or screen names</li>
+          <li>Email addresses or phone numbers</li>
+          <li>Photos, videos, or audio recordings</li>
+          <li>Geolocation or precise location data</li>
+          <li>Advertising identifiers or device IDs transmitted to servers</li>
+          <li>Biometric data (Face ID, Touch ID, etc.)</li>
+          <li>Contact lists or address books</li>
+          <li>Browsing history or search history</li>
+        </ul>
+      </div>
+
+      <!-- 3. Local Data Storage -->
+      <div class="card">
+        <h2><span class="section-icon">&#128241;</span> 3. Local Data Storage</h2>
+        <p>All data stays on the device. Nothing is sent to our servers.</p>
+        <ul>
+          <li><strong>Game progress:</strong> Unlocked animals, completed games, earned stars and badges &mdash; stored locally on device</li>
+          <li><strong>Settings:</strong> Language, volume, selected profile &mdash; stored locally on device</li>
+          <li><strong>Profile name:</strong> Parent-chosen display name (e.g., &ldquo;Alex&rdquo;), stored locally only, never transmitted</li>
+          <li><strong>Anonymous random ID:</strong> A locally-generated identifier (e.g., <code>anon_k3x8m1z</code>) with no connection to real identity</li>
+          <li><strong>Anonymous game events:</strong> Stored locally for parent dashboard display, automatically deleted after 30 days</li>
+        </ul>
+      </div>
+
+      <!-- 4. Crash Reports -->
+      <div class="card">
+        <h2><span class="section-icon">&#128295;</span> 4. Crash Reports (Sentry)</h2>
+        <p>If a parent provides consent through the parental gate, anonymous crash reports may be sent to Sentry to help us fix bugs. These reports:</p>
+        <ul>
+          <li>Contain no personally identifiable information (<code>sendDefaultPii: false</code>)</li>
+          <li>Do not include automatic session tracking (<code>enableAutoSessionTracking: false</code>)</li>
+          <li>Are automatically deleted after 90 days</li>
+          <li>Can be disabled at any time in parent settings</li>
+        </ul>
+      </div>
+
+      <!-- 5. Persistent Identifiers -->
+      <div class="card">
+        <h2><span class="section-icon">&#128273;</span> 5. Persistent Identifiers (COPPA-Compliant)</h2>
+        <p>WildPals uses two types of identifiers, both fully COPPA-compliant:</p>
+        <ul>
+          <li><strong>Anonymous device ID:</strong> A random string generated locally on the device. Not linked to any Apple or Google identifier. Never transmitted to any server. Never used for advertising or tracking.</li>
+          <li><strong>Session ID:</strong> An ephemeral identifier regenerated on each app launch. Used only for local session duration tracking. Discarded when the app closes.</li>
+        </ul>
+        <p>Neither identifier is ever transmitted off the device or used for advertising purposes.</p>
+      </div>
+
+      <!-- 6. Third-Party Services -->
+      <div class="card">
+        <h2><span class="section-icon">&#128279;</span> 6. Third-Party Services</h2>
+        <h3>RevenueCat</h3>
+        <p>Used exclusively for subscription management. All purchase processing is handled by Apple (App Store) or Google (Play Store). RevenueCat does not receive any child's personal information. <a href="https://www.revenuecat.com/privacy/" rel="noopener noreferrer" target="_blank">RevenueCat Privacy Policy</a></p>
+        <h3>Sentry</h3>
+        <p>Crash reporting service, activated only with parental consent. Configured with <code>sendDefaultPii: false</code> and <code>enableAutoSessionTracking: false</code>. No child PII is ever collected. <a href="https://sentry.io/privacy/" rel="noopener noreferrer" target="_blank">Sentry Privacy Policy</a></p>
+        <h3>What we do NOT use:</h3>
+        <ul>
+          <li>No advertising SDKs or ad networks</li>
+          <li>No social media integrations</li>
+          <li>No external analytics platforms (Google Analytics, Firebase, etc.)</li>
+          <li>No third-party tracking pixels or cookies</li>
+        </ul>
+      </div>
+
+      <!-- 7. Parental Gate -->
+      <div class="card">
+        <h2><span class="section-icon">&#128274;</span> 7. Parental Gate</h2>
+        <p>A parental gate protects all sensitive areas of the app. To access settings, make purchases, or reach any external link, a parent or guardian must:</p>
+        <ul>
+          <li>Press and hold a button for 3 seconds</li>
+          <li>Solve a simple math problem</li>
+        </ul>
+        <p>This ensures that children cannot accidentally access settings, make purchases, or leave the app.</p>
+      </div>
+
+      <!-- 8. Push Notifications -->
+      <div class="card">
+        <h2><span class="section-icon">&#128276;</span> 8. Push Notifications</h2>
+        <p>WildPals uses local notifications only (scheduled on-device). These may include gentle play reminders. They are:</p>
+        <ul>
+          <li>Scheduled entirely on the device &mdash; no server involved</li>
+          <li>Never used for advertising</li>
+          <li>Fully controllable and can be disabled in parent settings or device settings</li>
+        </ul>
+      </div>
+
+      <!-- 9. Data Security -->
+      <div class="card">
+        <h2><span class="section-icon">&#128272;</span> 9. Data Security</h2>
+        <p>We take data security seriously, even though we store minimal data:</p>
+        <ul>
+          <li><strong>Encrypted storage:</strong> All local data stored via MMKV with device-level encryption</li>
+          <li><strong>HTTPS-only:</strong> All network communication uses TLS encryption</li>
+          <li><strong>App Transport Security (ATS):</strong> Enforced on iOS &mdash; no insecure connections allowed</li>
+          <li><strong>No WebView:</strong> The app does not embed any web browser component, eliminating web-based tracking risks</li>
+        </ul>
+      </div>
+
+      <!-- 10. Data Deletion -->
+      <div class="card">
+        <h2><span class="section-icon">&#128465;&#65039;</span> 10. Data Deletion</h2>
+        <p>Parents can delete all of their child's data at any time:</p>
+        <ul>
+          <li><strong>In-app:</strong> Use the &ldquo;Delete Child&rsquo;s Data&rdquo; button in parent settings (behind parental gate)</li>
+          <li><strong>Uninstall:</strong> Removing the app deletes all locally stored data</li>
+          <li><strong>Contact us:</strong> Email <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> to request data deletion assistance</li>
+        </ul>
+        <p>Since no data is stored on our servers, deletion is immediate and complete.</p>
+      </div>
+
+      <!-- 11. Changes -->
+      <div class="card">
+        <h2><span class="section-icon">&#128196;</span> 11. Changes to This Policy</h2>
+        <p>If we make material changes to this Privacy Policy, we will update the effective date at the top and notify parents through an in-app notice behind the parental gate. We will never reduce the level of privacy protection without obtaining verifiable parental consent.</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-box">
+        <span class="icon" role="img" aria-label="Mail">&#128231;</span>
+        <p><strong>Questions or concerns?</strong></p>
+        <p>Mikhail Lesik &mdash; Spain</p>
+        <p><a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a></p>
+      </div>
+
+    </div>
+
+    <!-- ==================== RUSSIAN ==================== -->
+    <div class="lang-content" id="content-ru" lang="ru">
+
+      <p class="effective-date">&#1044;&#1072;&#1090;&#1072; &#1074;&#1089;&#1090;&#1091;&#1087;&#1083;&#1077;&#1085;&#1080;&#1103; &#1074; &#1089;&#1080;&#1083;&#1091;: 22 &#1072;&#1087;&#1088;&#1077;&#1083;&#1103; 2026 &#1075;.</p>
+
+      <div class="summary-box">
+        <span class="icon" role="img" aria-label="Shield">&#128737;&#65039;</span>
+        <p>WildPals НЕ собирает, не хранит и не передаёт персональные данные детей. Конфиденциальность вашего ребёнка — наш главный приоритет.</p>
+      </div>
+
+      <!-- 1 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128220;</span> 1. Введение</h2>
+        <p>WildPals — образовательная игра для детей 4–6 лет, разработанная Михаилом Лесиком (Испания). Настоящая Политика конфиденциальности описывает, как мы обрабатываем информацию в нашем приложении. WildPals изначально спроектирован для защиты конфиденциальности детей.</p>
+        <p>Эта политика распространяется на все версии приложения WildPals, доступные в Apple App Store и Google Play Store.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="card">
+        <h2><span class="section-icon">&#9989;</span> 2. Соответствие законодательству</h2>
+        <p>WildPals разработан в соответствии с:</p>
+        <ul>
+          <li><strong>США:</strong> Закон о защите конфиденциальности детей в Интернете (COPPA), включая Финальное правило 2025 года, вступающее в силу 22 апреля 2026 г.</li>
+          <li><strong>ЕС:</strong> Общий регламент по защите данных (GDPR), включая специальные положения для данных детей</li>
+          <li><strong>Apple:</strong> Правила категории «Дети» и Руководство по проверке приложений App Store</li>
+        </ul>
+        <h3>Мы НЕ собираем:</h3>
+        <ul class="no-collect-list">
+          <li>Имена, псевдонимы или никнеймы</li>
+          <li>Адреса электронной почты или номера телефонов</li>
+          <li>Фотографии, видео или аудиозаписи</li>
+          <li>Геолокацию или точные данные о местоположении</li>
+          <li>Рекламные идентификаторы или ID устройства, передаваемые на серверы</li>
+          <li>Биометрические данные (Face ID, Touch ID и т.д.)</li>
+          <li>Списки контактов или адресные книги</li>
+          <li>Историю просмотров или историю поиска</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128241;</span> 3. Локальное хранение данных</h2>
+        <p>Все данные остаются на устройстве. Ничего не отправляется на наши серверы.</p>
+        <ul>
+          <li><strong>Игровой прогресс:</strong> Разблокированные животные, пройденные игры, заработанные звёзды и значки — хранятся локально на устройстве</li>
+          <li><strong>Настройки:</strong> Язык, громкость, выбранный профиль — хранятся локально на устройстве</li>
+          <li><strong>Имя профиля:</strong> Отображаемое имя, выбранное родителем (например, «Алекс»), хранится только локально, никогда не передаётся</li>
+          <li><strong>Анонимный случайный ID:</strong> Локально сгенерированный идентификатор (например, <code>anon_k3x8m1z</code>), не связанный с реальной личностью</li>
+          <li><strong>Анонимные игровые события:</strong> Хранятся локально для отображения на родительской панели, автоматически удаляются через 30 дней</li>
+        </ul>
+      </div>
+
+      <!-- 4 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128295;</span> 4. Отчёты о сбоях (Sentry)</h2>
+        <p>Если родитель даёт согласие через родительский шлюз, анонимные отчёты о сбоях могут отправляться в Sentry для помощи в исправлении ошибок. Эти отчёты:</p>
+        <ul>
+          <li>Не содержат персональных данных (<code>sendDefaultPii: false</code>)</li>
+          <li>Не включают автоматическое отслеживание сессий (<code>enableAutoSessionTracking: false</code>)</li>
+          <li>Автоматически удаляются через 90 дней</li>
+          <li>Могут быть отключены в любое время в настройках для родителей</li>
+        </ul>
+      </div>
+
+      <!-- 5 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128273;</span> 5. Постоянные идентификаторы (соответствие COPPA)</h2>
+        <p>WildPals использует два типа идентификаторов, оба полностью соответствуют COPPA:</p>
+        <ul>
+          <li><strong>Анонимный ID устройства:</strong> Случайная строка, сгенерированная локально на устройстве. Не связана ни с каким идентификатором Apple или Google. Никогда не передаётся на серверы. Никогда не используется для рекламы или отслеживания.</li>
+          <li><strong>ID сессии:</strong> Временный идентификатор, пересоздаваемый при каждом запуске приложения. Используется только для локального отслеживания длительности сессии. Удаляется при закрытии приложения.</li>
+        </ul>
+        <p>Ни один из идентификаторов никогда не покидает устройство и не используется в рекламных целях.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128279;</span> 6. Сторонние сервисы</h2>
+        <h3>RevenueCat</h3>
+        <p>Используется исключительно для управления подписками. Вся обработка покупок осуществляется Apple (App Store) или Google (Play Store). RevenueCat не получает никаких персональных данных ребёнка. <a href="https://www.revenuecat.com/privacy/" rel="noopener noreferrer" target="_blank">Политика конфиденциальности RevenueCat</a></p>
+        <h3>Sentry</h3>
+        <p>Сервис отчётов о сбоях, активируемый только с согласия родителя. Настроен с параметрами <code>sendDefaultPii: false</code> и <code>enableAutoSessionTracking: false</code>. Персональные данные ребёнка никогда не собираются. <a href="https://sentry.io/privacy/" rel="noopener noreferrer" target="_blank">Политика конфиденциальности Sentry</a></p>
+        <h3>Что мы НЕ используем:</h3>
+        <ul>
+          <li>Рекламные SDK или рекламные сети</li>
+          <li>Интеграции с социальными сетями</li>
+          <li>Внешние аналитические платформы (Google Analytics, Firebase и т.д.)</li>
+          <li>Сторонние пиксели отслеживания или cookies</li>
+        </ul>
+      </div>
+
+      <!-- 7 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128274;</span> 7. Родительский шлюз</h2>
+        <p>Родительский шлюз защищает все чувствительные разделы приложения. Для доступа к настройкам, совершения покупок или перехода по внешним ссылкам родитель или опекун должен:</p>
+        <ul>
+          <li>Удерживать кнопку в течение 3 секунд</li>
+          <li>Решить простую математическую задачу</li>
+        </ul>
+        <p>Это гарантирует, что ребёнок не сможет случайно получить доступ к настройкам, совершить покупку или покинуть приложение.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128276;</span> 8. Push-уведомления</h2>
+        <p>WildPals использует только локальные уведомления (запланированные на устройстве). Они могут включать мягкие напоминания об игре. Они:</p>
+        <ul>
+          <li>Планируются полностью на устройстве — без участия сервера</li>
+          <li>Никогда не используются для рекламы</li>
+          <li>Полностью контролируемы и могут быть отключены в настройках для родителей или настройках устройства</li>
+        </ul>
+      </div>
+
+      <!-- 9 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128272;</span> 9. Безопасность данных</h2>
+        <p>Мы серьёзно относимся к безопасности данных, даже несмотря на минимальный объём хранимых данных:</p>
+        <ul>
+          <li><strong>Зашифрованное хранилище:</strong> Все локальные данные хранятся через MMKV с шифрованием на уровне устройства</li>
+          <li><strong>Только HTTPS:</strong> Все сетевые соединения используют шифрование TLS</li>
+          <li><strong>App Transport Security (ATS):</strong> Принудительно включён на iOS — небезопасные соединения запрещены</li>
+          <li><strong>Без WebView:</strong> Приложение не содержит встроенного веб-браузера, что исключает риски веб-отслеживания</li>
+        </ul>
+      </div>
+
+      <!-- 10 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128465;&#65039;</span> 10. Удаление данных</h2>
+        <p>Родители могут удалить все данные ребёнка в любое время:</p>
+        <ul>
+          <li><strong>В приложении:</strong> Используйте кнопку «Удалить данные ребёнка» в настройках для родителей (за родительским шлюзом)</li>
+          <li><strong>Удаление приложения:</strong> Удаление приложения удаляет все локально хранящиеся данные</li>
+          <li><strong>Связаться с нами:</strong> Напишите на <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> для помощи с удалением данных</li>
+        </ul>
+        <p>Поскольку данные не хранятся на наших серверах, удаление происходит немедленно и полностью.</p>
+      </div>
+
+      <!-- 11 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128196;</span> 11. Изменения в политике</h2>
+        <p>Если мы внесём существенные изменения в настоящую Политику конфиденциальности, мы обновим дату вступления в силу вверху страницы и уведомим родителей через уведомление в приложении за родительским шлюзом. Мы никогда не снизим уровень защиты конфиденциальности без получения подтверждённого согласия родителей.</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-box">
+        <span class="icon" role="img" aria-label="Mail">&#128231;</span>
+        <p><strong>Вопросы или предложения?</strong></p>
+        <p>Михаил Лесик — Испания</p>
+        <p><a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a></p>
+      </div>
+
+    </div>
+
+    <!-- ==================== PORTUGUESE ==================== -->
+    <div class="lang-content" id="content-pt" lang="pt">
+
+      <p class="effective-date">Data de vigência: 22 de abril de 2026</p>
+
+      <div class="summary-box">
+        <span class="icon" role="img" aria-label="Shield">&#128737;&#65039;</span>
+        <p>O WildPals NÃO coleta, armazena ou compartilha nenhuma informação pessoal de crianças. A privacidade do seu filho é nossa maior prioridade.</p>
+      </div>
+
+      <!-- 1 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128220;</span> 1. Introdução</h2>
+        <p>WildPals é um jogo educativo para crianças de 4 a 6 anos, desenvolvido por Mikhail Lesik (Espanha). Esta Política de Privacidade explica como lidamos com as informações em nosso aplicativo. O WildPals foi projetado desde o início para proteger a privacidade das crianças.</p>
+        <p>Esta política se aplica a todas as versões do aplicativo WildPals disponíveis na Apple App Store e na Google Play Store.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="card">
+        <h2><span class="section-icon">&#9989;</span> 2. Conformidade Legal</h2>
+        <p>O WildPals foi projetado em conformidade com:</p>
+        <ul>
+          <li><strong>EUA:</strong> Lei de Proteção à Privacidade Online de Crianças (COPPA), incluindo a Regra Final de 2025, em vigor a partir de 22 de abril de 2026</li>
+          <li><strong>UE:</strong> Regulamento Geral de Proteção de Dados (GDPR), incluindo disposições especiais para dados de crianças</li>
+          <li><strong>Apple:</strong> Diretrizes da categoria Kids e Diretrizes de Revisão da App Store</li>
+        </ul>
+        <h3>NÃO coletamos:</h3>
+        <ul class="no-collect-list">
+          <li>Nomes, nomes de usuário ou apelidos</li>
+          <li>Endereços de e-mail ou números de telefone</li>
+          <li>Fotos, vídeos ou gravações de áudio</li>
+          <li>Geolocalização ou dados precisos de localização</li>
+          <li>Identificadores de publicidade ou IDs de dispositivo transmitidos a servidores</li>
+          <li>Dados biométricos (Face ID, Touch ID, etc.)</li>
+          <li>Listas de contatos ou agendas de endereços</li>
+          <li>Histórico de navegação ou histórico de pesquisa</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128241;</span> 3. Armazenamento Local de Dados</h2>
+        <p>Todos os dados permanecem no dispositivo. Nada é enviado para nossos servidores.</p>
+        <ul>
+          <li><strong>Progresso do jogo:</strong> Animais desbloqueados, jogos concluídos, estrelas e distintivos conquistados — armazenados localmente no dispositivo</li>
+          <li><strong>Configurações:</strong> Idioma, volume, perfil selecionado — armazenados localmente no dispositivo</li>
+          <li><strong>Nome do perfil:</strong> Nome de exibição escolhido pelo pai/mãe (por exemplo, "Alex"), armazenado apenas localmente, nunca transmitido</li>
+          <li><strong>ID aleatório anônimo:</strong> Um identificador gerado localmente (por exemplo, <code>anon_k3x8m1z</code>) sem conexão com a identidade real</li>
+          <li><strong>Eventos de jogo anônimos:</strong> Armazenados localmente para exibição no painel dos pais, automaticamente excluídos após 30 dias</li>
+        </ul>
+      </div>
+
+      <!-- 4 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128295;</span> 4. Relatórios de Falhas (Sentry)</h2>
+        <p>Se um pai/mãe fornecer consentimento através do portão parental, relatórios anônimos de falhas podem ser enviados ao Sentry para nos ajudar a corrigir bugs. Esses relatórios:</p>
+        <ul>
+          <li>Não contêm informações pessoais identificáveis (<code>sendDefaultPii: false</code>)</li>
+          <li>Não incluem rastreamento automático de sessão (<code>enableAutoSessionTracking: false</code>)</li>
+          <li>São automaticamente excluídos após 90 dias</li>
+          <li>Podem ser desativados a qualquer momento nas configurações dos pais</li>
+        </ul>
+      </div>
+
+      <!-- 5 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128273;</span> 5. Identificadores Persistentes (Conformidade COPPA)</h2>
+        <p>O WildPals usa dois tipos de identificadores, ambos totalmente compatíveis com a COPPA:</p>
+        <ul>
+          <li><strong>ID anônimo do dispositivo:</strong> Uma sequência aleatória gerada localmente no dispositivo. Não vinculada a nenhum identificador da Apple ou do Google. Nunca transmitida a nenhum servidor. Nunca usada para publicidade ou rastreamento.</li>
+          <li><strong>ID de sessão:</strong> Um identificador efêmero regenerado a cada inicialização do aplicativo. Usado apenas para rastreamento local da duração da sessão. Descartado quando o aplicativo é fechado.</li>
+        </ul>
+        <p>Nenhum dos identificadores é transmitido para fora do dispositivo ou usado para fins publicitários.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128279;</span> 6. Serviços de Terceiros</h2>
+        <h3>RevenueCat</h3>
+        <p>Usado exclusivamente para gerenciamento de assinaturas. Todo o processamento de compras é feito pela Apple (App Store) ou Google (Play Store). O RevenueCat não recebe nenhuma informação pessoal da criança. <a href="https://www.revenuecat.com/privacy/" rel="noopener noreferrer" target="_blank">Política de Privacidade do RevenueCat</a></p>
+        <h3>Sentry</h3>
+        <p>Serviço de relatórios de falhas, ativado apenas com consentimento parental. Configurado com <code>sendDefaultPii: false</code> e <code>enableAutoSessionTracking: false</code>. Nenhum dado pessoal da criança é coletado. <a href="https://sentry.io/privacy/" rel="noopener noreferrer" target="_blank">Política de Privacidade do Sentry</a></p>
+        <h3>O que NÃO usamos:</h3>
+        <ul>
+          <li>SDKs de publicidade ou redes de anúncios</li>
+          <li>Integrações com redes sociais</li>
+          <li>Plataformas de análise externas (Google Analytics, Firebase, etc.)</li>
+          <li>Pixels de rastreamento de terceiros ou cookies</li>
+        </ul>
+      </div>
+
+      <!-- 7 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128274;</span> 7. Portão Parental</h2>
+        <p>Um portão parental protege todas as áreas sensíveis do aplicativo. Para acessar configurações, fazer compras ou acessar qualquer link externo, um pai/mãe ou responsável deve:</p>
+        <ul>
+          <li>Pressionar e segurar um botão por 3 segundos</li>
+          <li>Resolver um problema simples de matemática</li>
+        </ul>
+        <p>Isso garante que as crianças não possam acessar acidentalmente as configurações, fazer compras ou sair do aplicativo.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128276;</span> 8. Notificações Push</h2>
+        <p>O WildPals usa apenas notificações locais (agendadas no dispositivo). Elas podem incluir lembretes gentis para jogar. Elas são:</p>
+        <ul>
+          <li>Agendadas inteiramente no dispositivo — sem servidor envolvido</li>
+          <li>Nunca usadas para publicidade</li>
+          <li>Totalmente controláveis e podem ser desativadas nas configurações dos pais ou nas configurações do dispositivo</li>
+        </ul>
+      </div>
+
+      <!-- 9 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128272;</span> 9. Segurança dos Dados</h2>
+        <p>Levamos a segurança dos dados a sério, mesmo armazenando dados mínimos:</p>
+        <ul>
+          <li><strong>Armazenamento criptografado:</strong> Todos os dados locais são armazenados via MMKV com criptografia no nível do dispositivo</li>
+          <li><strong>Apenas HTTPS:</strong> Toda comunicação de rede usa criptografia TLS</li>
+          <li><strong>App Transport Security (ATS):</strong> Aplicado no iOS — conexões inseguras não são permitidas</li>
+          <li><strong>Sem WebView:</strong> O aplicativo não incorpora nenhum componente de navegador web, eliminando riscos de rastreamento baseado na web</li>
+        </ul>
+      </div>
+
+      <!-- 10 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128465;&#65039;</span> 10. Exclusão de Dados</h2>
+        <p>Os pais podem excluir todos os dados de seus filhos a qualquer momento:</p>
+        <ul>
+          <li><strong>No aplicativo:</strong> Use o botão "Excluir Dados da Criança" nas configurações dos pais (atrás do portão parental)</li>
+          <li><strong>Desinstalar:</strong> Remover o aplicativo exclui todos os dados armazenados localmente</li>
+          <li><strong>Entre em contato:</strong> Envie um e-mail para <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> para solicitar assistência na exclusão de dados</li>
+        </ul>
+        <p>Como nenhum dado é armazenado em nossos servidores, a exclusão é imediata e completa.</p>
+      </div>
+
+      <!-- 11 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128196;</span> 11. Alterações nesta Política</h2>
+        <p>Se fizermos alterações significativas nesta Política de Privacidade, atualizaremos a data de vigência no topo e notificaremos os pais através de um aviso no aplicativo atrás do portão parental. Nunca reduziremos o nível de proteção de privacidade sem obter consentimento parental verificável.</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-box">
+        <span class="icon" role="img" aria-label="Mail">&#128231;</span>
+        <p><strong>Dúvidas ou preocupações?</strong></p>
+        <p>Mikhail Lesik — Espanha</p>
+        <p><a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a></p>
+      </div>
+
+    </div>
+
+    <!-- ==================== SPANISH ==================== -->
+    <div class="lang-content" id="content-es" lang="es">
+
+      <p class="effective-date">Fecha de vigencia: 22 de abril de 2026</p>
+
+      <div class="summary-box">
+        <span class="icon" role="img" aria-label="Shield">&#128737;&#65039;</span>
+        <p>WildPals NO recopila, almacena ni comparte ninguna información personal de los niños. La privacidad de su hijo es nuestra máxima prioridad.</p>
+      </div>
+
+      <!-- 1 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128220;</span> 1. Introducción</h2>
+        <p>WildPals es un juego educativo para niños de 4 a 6 años, desarrollado por Mikhail Lesik (España). Esta Política de Privacidad explica cómo manejamos la información en nuestra aplicación. WildPals fue diseñado desde cero para proteger la privacidad de los niños.</p>
+        <p>Esta política se aplica a todas las versiones de la aplicación WildPals disponibles en la Apple App Store y Google Play Store.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="card">
+        <h2><span class="section-icon">&#9989;</span> 2. Cumplimiento Legal</h2>
+        <p>WildPals está diseñado para cumplir con:</p>
+        <ul>
+          <li><strong>EE.UU.:</strong> Ley de Protección de la Privacidad Infantil en Línea (COPPA), incluyendo la Regla Final de 2025, vigente desde el 22 de abril de 2026</li>
+          <li><strong>UE:</strong> Reglamento General de Protección de Datos (RGPD), incluyendo disposiciones especiales para datos de menores</li>
+          <li><strong>Apple:</strong> Directrices de la categoría Kids y Directrices de Revisión de la App Store</li>
+        </ul>
+        <h3>NO recopilamos:</h3>
+        <ul class="no-collect-list">
+          <li>Nombres, nombres de usuario o alias</li>
+          <li>Direcciones de correo electrónico o números de teléfono</li>
+          <li>Fotos, vídeos o grabaciones de audio</li>
+          <li>Geolocalización o datos precisos de ubicación</li>
+          <li>Identificadores publicitarios o IDs de dispositivo transmitidos a servidores</li>
+          <li>Datos biométricos (Face ID, Touch ID, etc.)</li>
+          <li>Listas de contactos o agendas de direcciones</li>
+          <li>Historial de navegación o historial de búsqueda</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128241;</span> 3. Almacenamiento Local de Datos</h2>
+        <p>Todos los datos permanecen en el dispositivo. Nada se envía a nuestros servidores.</p>
+        <ul>
+          <li><strong>Progreso del juego:</strong> Animales desbloqueados, juegos completados, estrellas e insignias ganadas — almacenados localmente en el dispositivo</li>
+          <li><strong>Configuración:</strong> Idioma, volumen, perfil seleccionado — almacenados localmente en el dispositivo</li>
+          <li><strong>Nombre del perfil:</strong> Nombre de visualización elegido por el padre/madre (por ejemplo, "Alex"), almacenado solo localmente, nunca transmitido</li>
+          <li><strong>ID aleatorio anónimo:</strong> Un identificador generado localmente (por ejemplo, <code>anon_k3x8m1z</code>) sin conexión con la identidad real</li>
+          <li><strong>Eventos de juego anónimos:</strong> Almacenados localmente para mostrar en el panel de padres, eliminados automáticamente después de 30 días</li>
+        </ul>
+      </div>
+
+      <!-- 4 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128295;</span> 4. Informes de Errores (Sentry)</h2>
+        <p>Si un padre/madre otorga su consentimiento a través de la puerta parental, pueden enviarse informes anónimos de errores a Sentry para ayudarnos a corregir fallos. Estos informes:</p>
+        <ul>
+          <li>No contienen información personal identificable (<code>sendDefaultPii: false</code>)</li>
+          <li>No incluyen seguimiento automático de sesiones (<code>enableAutoSessionTracking: false</code>)</li>
+          <li>Se eliminan automáticamente después de 90 días</li>
+          <li>Pueden desactivarse en cualquier momento en la configuración para padres</li>
+        </ul>
+      </div>
+
+      <!-- 5 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128273;</span> 5. Identificadores Persistentes (Cumplimiento COPPA)</h2>
+        <p>WildPals utiliza dos tipos de identificadores, ambos totalmente compatibles con COPPA:</p>
+        <ul>
+          <li><strong>ID anónimo del dispositivo:</strong> Una cadena aleatoria generada localmente en el dispositivo. No vinculada a ningún identificador de Apple o Google. Nunca transmitida a ningún servidor. Nunca utilizada para publicidad o seguimiento.</li>
+          <li><strong>ID de sesión:</strong> Un identificador efímero regenerado en cada inicio de la aplicación. Usado solo para el seguimiento local de la duración de la sesión. Se descarta cuando se cierra la aplicación.</li>
+        </ul>
+        <p>Ninguno de los identificadores se transmite fuera del dispositivo ni se utiliza con fines publicitarios.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128279;</span> 6. Servicios de Terceros</h2>
+        <h3>RevenueCat</h3>
+        <p>Utilizado exclusivamente para la gestión de suscripciones. Todo el procesamiento de compras lo realizan Apple (App Store) o Google (Play Store). RevenueCat no recibe ninguna información personal del niño. <a href="https://www.revenuecat.com/privacy/" rel="noopener noreferrer" target="_blank">Política de Privacidad de RevenueCat</a></p>
+        <h3>Sentry</h3>
+        <p>Servicio de informes de errores, activado solo con consentimiento parental. Configurado con <code>sendDefaultPii: false</code> y <code>enableAutoSessionTracking: false</code>. No se recopilan datos personales del niño. <a href="https://sentry.io/privacy/" rel="noopener noreferrer" target="_blank">Política de Privacidad de Sentry</a></p>
+        <h3>Lo que NO usamos:</h3>
+        <ul>
+          <li>SDKs publicitarios o redes de anuncios</li>
+          <li>Integraciones con redes sociales</li>
+          <li>Plataformas de análisis externas (Google Analytics, Firebase, etc.)</li>
+          <li>Píxeles de seguimiento de terceros o cookies</li>
+        </ul>
+      </div>
+
+      <!-- 7 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128274;</span> 7. Puerta Parental</h2>
+        <p>Una puerta parental protege todas las áreas sensibles de la aplicación. Para acceder a la configuración, realizar compras o acceder a cualquier enlace externo, un padre/madre o tutor debe:</p>
+        <ul>
+          <li>Mantener pulsado un botón durante 3 segundos</li>
+          <li>Resolver un problema matemático sencillo</li>
+        </ul>
+        <p>Esto garantiza que los niños no puedan acceder accidentalmente a la configuración, realizar compras o salir de la aplicación.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128276;</span> 8. Notificaciones Push</h2>
+        <p>WildPals utiliza solo notificaciones locales (programadas en el dispositivo). Pueden incluir recordatorios amables para jugar. Estas notificaciones:</p>
+        <ul>
+          <li>Se programan íntegramente en el dispositivo — sin intervención de servidores</li>
+          <li>Nunca se utilizan para publicidad</li>
+          <li>Son totalmente controlables y pueden desactivarse en la configuración para padres o en la configuración del dispositivo</li>
+        </ul>
+      </div>
+
+      <!-- 9 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128272;</span> 9. Seguridad de los Datos</h2>
+        <p>Nos tomamos muy en serio la seguridad de los datos, incluso almacenando datos mínimos:</p>
+        <ul>
+          <li><strong>Almacenamiento cifrado:</strong> Todos los datos locales se almacenan mediante MMKV con cifrado a nivel de dispositivo</li>
+          <li><strong>Solo HTTPS:</strong> Toda la comunicación de red utiliza cifrado TLS</li>
+          <li><strong>App Transport Security (ATS):</strong> Aplicado en iOS — no se permiten conexiones inseguras</li>
+          <li><strong>Sin WebView:</strong> La aplicación no incorpora ningún componente de navegador web, eliminando riesgos de rastreo basado en la web</li>
+        </ul>
+      </div>
+
+      <!-- 10 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128465;&#65039;</span> 10. Eliminación de Datos</h2>
+        <p>Los padres pueden eliminar todos los datos de su hijo en cualquier momento:</p>
+        <ul>
+          <li><strong>En la aplicación:</strong> Utilice el botón "Eliminar Datos del Niño" en la configuración para padres (detrás de la puerta parental)</li>
+          <li><strong>Desinstalar:</strong> Al eliminar la aplicación se borran todos los datos almacenados localmente</li>
+          <li><strong>Contáctenos:</strong> Envíe un correo a <a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a> para solicitar asistencia en la eliminación de datos</li>
+        </ul>
+        <p>Dado que no se almacenan datos en nuestros servidores, la eliminación es inmediata y completa.</p>
+      </div>
+
+      <!-- 11 -->
+      <div class="card">
+        <h2><span class="section-icon">&#128196;</span> 11. Cambios en esta Política</h2>
+        <p>Si realizamos cambios sustanciales en esta Política de Privacidad, actualizaremos la fecha de vigencia en la parte superior y notificaremos a los padres mediante un aviso en la aplicación detrás de la puerta parental. Nunca reduciremos el nivel de protección de la privacidad sin obtener el consentimiento parental verificable.</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-box">
+        <span class="icon" role="img" aria-label="Mail">&#128231;</span>
+        <p><strong>¿Preguntas o inquietudes?</strong></p>
+        <p>Mikhail Lesik — España</p>
+        <p><a href="mailto:lesikom@gmail.com">lesikom@gmail.com</a></p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2026 WildPals &mdash; Mikhail Lesik. All rights reserved.</p>
+    </div>
+
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      // Hide all content sections
+      document.querySelectorAll('.lang-content').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      // Deactivate all buttons
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      // Show selected content
+      var content = document.getElementById('content-' + lang);
+      if (content) {
+        content.classList.add('active');
+      }
+      // Activate selected button
+      var btn = document.querySelector('.lang-btn[data-lang="' + lang + '"]');
+      if (btn) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+      }
+      // Update html lang attribute
+      document.documentElement.lang = lang;
+    }
+
+    // Auto-detect language from browser
+    (function() {
+      var userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      if (userLang.startsWith('ru')) {
+        switchLang('ru');
+      } else if (userLang.startsWith('pt')) {
+        switchLang('pt');
+      } else if (userLang.startsWith('es')) {
+        switchLang('es');
+      } else {
+        switchLang('en');
+      }
+    })();
+  </script>
+
+</body>
+</html>
