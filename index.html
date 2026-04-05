@@ -65,10 +65,28 @@
             background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 50%, #A5D6A7 100%);
         }
 
-        .hero-emojis {
-            font-size: 48px;
+        .hero-avatars {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
             margin-bottom: 16px;
             animation: bounce 2s ease-in-out infinite;
+        }
+
+        .hero-avatars img {
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+        }
+
+        .feature-avatar {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
         @keyframes bounce {
@@ -265,8 +283,13 @@
                 font-size: 16px;
             }
 
-            .hero-emojis {
-                font-size: 36px;
+            .hero-avatars img {
+                width: 56px;
+                height: 56px;
+            }
+
+            .hero-avatars {
+                gap: 10px;
             }
 
             .features h2,
@@ -310,7 +333,12 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-emojis" aria-hidden="true">🦊 🐧 🦁 🐋</div>
+        <div class="hero-avatars" aria-hidden="true">
+            <img src="images/fox.png" alt="Fox" width="72" height="72">
+            <img src="images/penguin.png" alt="Penguin" width="72" height="72">
+            <img src="images/lion.png" alt="Lion" width="72" height="72">
+            <img src="images/whale.png" alt="Whale" width="72" height="72">
+        </div>
         <h1>WildPals</h1>
         <p class="tagline">Explore Nature with Your Little One!</p>
         <p class="subtitle">Educational game for children ages 4-6</p>
@@ -326,7 +354,7 @@
                 <p>Forest, Ocean, Savanna, and Arctic — each with unique animals and adventures</p>
             </div>
             <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🦁</span>
+                <img class="feature-avatar" src="images/lion.png" alt="" aria-hidden="true">
                 <h3>56 Amazing Animals</h3>
                 <p>Discover fascinating facts about real animals with fun illustrations</p>
             </div>
@@ -395,7 +423,12 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-emojis" aria-hidden="true">🦊 🐧 🦁 🐋</div>
+        <div class="hero-avatars" aria-hidden="true">
+            <img src="images/fox.png" alt="Fox" width="72" height="72">
+            <img src="images/penguin.png" alt="Penguin" width="72" height="72">
+            <img src="images/lion.png" alt="Lion" width="72" height="72">
+            <img src="images/whale.png" alt="Whale" width="72" height="72">
+        </div>
         <h1>WildPals</h1>
         <p class="tagline">Исследуйте природу вместе с малышом!</p>
         <p class="subtitle">Развивающая игра для детей 4-6 лет</p>
@@ -411,7 +444,7 @@
                 <p>Лес, Океан, Саванна и Арктика — в каждом уникальные животные и приключения</p>
             </div>
             <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🦁</span>
+                <img class="feature-avatar" src="images/lion.png" alt="" aria-hidden="true">
                 <h3>56 удивительных животных</h3>
                 <p>Узнавайте интересные факты о настоящих животных с весёлыми иллюстрациями</p>
             </div>
@@ -480,7 +513,12 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-emojis" aria-hidden="true">🦊 🐧 🦁 🐋</div>
+        <div class="hero-avatars" aria-hidden="true">
+            <img src="images/fox.png" alt="Fox" width="72" height="72">
+            <img src="images/penguin.png" alt="Penguin" width="72" height="72">
+            <img src="images/lion.png" alt="Lion" width="72" height="72">
+            <img src="images/whale.png" alt="Whale" width="72" height="72">
+        </div>
         <h1>WildPals</h1>
         <p class="tagline">Explore a natureza com o seu pequeno!</p>
         <p class="subtitle">Jogo educativo para criancas de 4 a 6 anos</p>
@@ -496,7 +534,7 @@
                 <p>Floresta, Oceano, Savana e Artico — cada um com animais e aventuras unicos</p>
             </div>
             <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🦁</span>
+                <img class="feature-avatar" src="images/lion.png" alt="" aria-hidden="true">
                 <h3>56 animais incriveis</h3>
                 <p>Descubra fatos fascinantes sobre animais reais com ilustracoes divertidas</p>
             </div>
@@ -565,7 +603,12 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-emojis" aria-hidden="true">🦊 🐧 🦁 🐋</div>
+        <div class="hero-avatars" aria-hidden="true">
+            <img src="images/fox.png" alt="Fox" width="72" height="72">
+            <img src="images/penguin.png" alt="Penguin" width="72" height="72">
+            <img src="images/lion.png" alt="Lion" width="72" height="72">
+            <img src="images/whale.png" alt="Whale" width="72" height="72">
+        </div>
         <h1>WildPals</h1>
         <p class="tagline">!Explora la naturaleza con tu pequeno!</p>
         <p class="subtitle">Juego educativo para ninos de 4 a 6 anos</p>
@@ -581,7 +624,7 @@
                 <p>Bosque, Oceano, Sabana y Artico — cada uno con animales y aventuras unicos</p>
             </div>
             <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🦁</span>
+                <img class="feature-avatar" src="images/lion.png" alt="" aria-hidden="true">
                 <h3>56 animales increibles</h3>
                 <p>Descubre datos fascinantes sobre animales reales con divertidas ilustraciones</p>
             </div>
