@@ -1,745 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WildPals - Educational nature game for children ages 4-6. Explore 4 worlds, discover 56 animals, play 6 educational games. No ads, no tracking, COPPA compliant.">
-    <meta name="author" content="Mikhail Lesik">
-    <title>WildPals - Explore Nature with Your Little One!</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WildPals — Educational nature game for children ages 4-6. Explore 4 worlds, discover 56 animals, play 6 educational games. No ads, no tracking, COPPA compliant.">
+<meta name="author" content="Mikhail Lesik">
+<title>WildPals — Explore Nature with Your Little One</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FDF8EE;
+  --sky: #DDF1FA;
+  --ink: #3A4A3E;
+  --muted: #6E7D70;
+  --green: #58B368;
+  --green-dark: #3E8E4E;
+  --green-deep: #2D6A4F;
+  --sun: #FFC94D;
+  --radius: 28px;
+  --font: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #E8F5E9;
-            color: #2E7D32;
-            line-height: 1.6;
-        }
+/* ---------- top bar ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(253, 248, 238, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.topbar-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.wordmark {
+  font-weight: 900; font-size: 26px; letter-spacing: -0.01em;
+  color: var(--green-deep); text-decoration: none;
+}
+.wordmark span { color: var(--sun); }
+.langs { display: flex; gap: 6px; }
+.lang-btn {
+  font-family: var(--font); font-size: 13px; font-weight: 800;
+  padding: 8px 13px; border: none; border-radius: 999px;
+  background: #fff; color: var(--muted); cursor: pointer;
+  box-shadow: 0 3px 0 rgba(58, 74, 62, 0.12);
+  transition: transform .15s, background .2s, color .2s;
+}
+.lang-btn:hover { transform: translateY(-2px); color: var(--ink); }
+.lang-btn.active { background: var(--green); color: #fff; box-shadow: 0 3px 0 var(--green-dark); }
 
-        /* Language Switcher */
-        .lang-switcher {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
+/* ---------- hero ---------- */
+.hero {
+  position: relative; text-align: center;
+  padding: 96px 0 140px;
+  background: linear-gradient(180deg, var(--sky) 0%, #EAF6E9 70%, var(--bg) 100%);
+  border-radius: 0 0 56px 56px;
+}
+.hero::before, .hero::after {
+  content: ""; position: absolute; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55); z-index: 0;
+}
+.hero::before { width: 220px; height: 90px; top: 70px; left: 8%; box-shadow: 40px 18px 0 -8px rgba(255,255,255,.45); }
+.hero::after { width: 180px; height: 74px; top: 130px; right: 10%; box-shadow: -34px 16px 0 -6px rgba(255,255,255,.4); }
+.hero .wrap { position: relative; z-index: 1; }
+.eyebrow {
+  display: inline-block; font-size: 14px; font-weight: 800;
+  color: var(--green-deep); background: #fff;
+  padding: 8px 18px; border-radius: 999px;
+  box-shadow: 0 4px 0 rgba(58, 74, 62, 0.1);
+  margin-bottom: 26px;
+}
+h1 {
+  font-weight: 900;
+  font-size: clamp(38px, 6vw, 62px);
+  line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--green-deep);
+  max-width: 17ch; margin: 0 auto 20px;
+}
+.hero-sub {
+  font-size: 19px; font-weight: 600; color: var(--muted);
+  max-width: 52ch; margin: 0 auto 36px;
+}
+.store-link {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--green); color: #fff;
+  padding: 16px 30px; border-radius: 999px; text-decoration: none;
+  box-shadow: 0 6px 0 var(--green-dark);
+  transition: transform .15s, box-shadow .15s;
+}
+.store-link:hover { transform: translateY(-3px); box-shadow: 0 9px 0 var(--green-dark); }
+.store-link:active { transform: translateY(2px); box-shadow: 0 3px 0 var(--green-dark); }
+.store-link svg { width: 26px; height: 26px; fill: currentColor; flex-shrink: 0; }
+.store-link .small { display: block; font-size: 11px; font-weight: 700; opacity: .85; line-height: 1.2; text-align: left; }
+.store-link .big { display: block; font-size: 19px; font-weight: 900; line-height: 1.2; text-align: left; }
+.hero-animals {
+  display: flex; justify-content: center; align-items: flex-end;
+  gap: clamp(10px, 4vw, 44px); margin-top: 64px;
+}
+.hero-animals img {
+  width: clamp(70px, 11vw, 116px); height: auto;
+  filter: drop-shadow(0 12px 16px rgba(45, 106, 79, 0.22));
+  animation: bob 3.2s ease-in-out infinite;
+}
+.hero-animals img:nth-child(2) { animation-delay: .4s; }
+.hero-animals img:nth-child(3) { animation-delay: .8s; }
+.hero-animals img:nth-child(4) { animation-delay: 1.2s; }
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-2deg); }
+}
 
-        .lang-btn {
-            padding: 8px 18px;
-            border: 2px solid #4CAF50;
-            border-radius: 20px;
-            background: white;
-            color: #4CAF50;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+/* ---------- trust strip ---------- */
+.trust-inner {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 12px 16px; padding: 36px 0 0;
+}
+.trust-item {
+  font-size: 14px; font-weight: 800; color: var(--green-deep);
+  background: #fff; padding: 9px 18px; border-radius: 999px;
+  box-shadow: 0 4px 0 rgba(58, 74, 62, 0.1);
+}
+.trust-item::before { content: "✓ "; color: var(--green); font-weight: 900; }
 
-        .lang-btn:hover {
-            background: #E8F5E9;
-            transform: translateY(-1px);
-        }
+/* ---------- sections ---------- */
+section { padding: 96px 0; }
+.section-title {
+  font-weight: 900;
+  font-size: clamp(30px, 4.5vw, 44px); letter-spacing: -0.015em;
+  color: var(--green-deep);
+  text-align: center; margin-bottom: 14px;
+}
+.section-sub {
+  text-align: center; color: var(--muted); font-weight: 600;
+  max-width: 48ch; margin: 0 auto 56px; font-size: 18px;
+}
 
-        .lang-btn.active {
-            background: #4CAF50;
-            color: white;
-            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
-        }
+/* ---------- features ---------- */
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.feature {
+  background: #fff; border-radius: var(--radius);
+  padding: 34px 28px; text-align: center;
+  box-shadow: 0 6px 0 rgba(58, 74, 62, 0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.feature:hover { transform: translateY(-6px) rotate(-0.5deg); box-shadow: 0 12px 0 rgba(58, 74, 62, 0.08); }
+.feature .icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 30px; margin-bottom: 18px;
+}
+.feature:nth-child(1) .icon { background: #FFE3C7; }
+.feature:nth-child(2) .icon { background: #D9F0DC; }
+.feature:nth-child(3) .icon { background: #D6EBFA; }
+.feature:nth-child(4) .icon { background: #FFE0E0; }
+.feature:nth-child(5) .icon { background: #F3E3FA; }
+.feature:nth-child(6) .icon { background: #FFF3C2; }
+.feature h3 { font-size: 19px; font-weight: 800; margin-bottom: 8px; }
+.feature p { font-size: 15px; font-weight: 600; color: var(--muted); }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 50%, #A5D6A7 100%);
-        }
+/* ---------- biomes ---------- */
+.biomes { background: #F2F8EE; border-radius: 56px; }
+.biomes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.biome {
+  border-radius: var(--radius); padding: 38px 34px;
+  display: flex; align-items: center; gap: 26px;
+  color: #fff;
+  transition: transform .2s ease;
+}
+.biome:hover { transform: translateY(-6px) rotate(0.5deg); }
+.biome img {
+  width: 104px; height: auto; flex-shrink: 0;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,.22));
+  transition: transform .3s;
+}
+.biome:hover img { transform: scale(1.08) rotate(-3deg); }
+.biome h3 { font-size: 26px; font-weight: 900; margin-bottom: 6px; }
+.biome p { font-size: 15px; font-weight: 600; line-height: 1.55; opacity: .94; }
+.biome .tag {
+  display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: .05em;
+  text-transform: uppercase; padding: 4px 12px; border-radius: 999px;
+  margin-bottom: 10px; background: var(--sun); color: #6B4E00;
+  box-shadow: 0 3px 0 rgba(0,0,0,.12);
+}
+.biome--forest  { background: linear-gradient(135deg, #58B368, #2D6A4F); box-shadow: 0 7px 0 #235640; }
+.biome--ocean   { background: linear-gradient(135deg, #51A8DE, #2C6E9E); box-shadow: 0 7px 0 #235A82; }
+.biome--savanna { background: linear-gradient(135deg, #F0A35E, #C77B33); box-shadow: 0 7px 0 #A56428; }
+.biome--arctic  { background: linear-gradient(135deg, #7FB7E0, #4E7FA8); box-shadow: 0 7px 0 #3F698C; }
 
-        .hero-avatars {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 16px;
-            animation: bounce 2s ease-in-out infinite;
-        }
+/* ---------- download ---------- */
+.download { text-align: center; }
+.download-card {
+  background: linear-gradient(135deg, #58B368, #2D6A4F);
+  border-radius: 40px; padding: 72px 32px;
+  box-shadow: 0 8px 0 #235640;
+  color: #fff;
+}
+.download-card .section-title { color: #fff; }
+.download-card .section-sub { color: rgba(255,255,255,.85); margin-bottom: 36px; }
+.download-card .store-link { background: #fff; color: var(--green-deep); box-shadow: 0 6px 0 rgba(0,0,0,.22); }
+.download-card .store-link:hover { box-shadow: 0 9px 0 rgba(0,0,0,.22); }
+.download-animals { display: flex; justify-content: center; gap: 22px; margin-top: 44px; }
+.download-animals img { width: 64px; height: auto; filter: drop-shadow(0 6px 8px rgba(0,0,0,.25)); }
 
-        .hero-avatars img {
-            width: 72px;
-            height: 72px;
-            object-fit: contain;
-        }
+/* ---------- footer ---------- */
+footer { padding: 48px 0 60px; }
+.footer-inner {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 16px;
+}
+.footer-links { display: flex; flex-wrap: wrap; gap: 26px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 800; transition: color .2s; }
+.footer-links a:hover { color: var(--green-deep); }
+.copyright { color: var(--muted); font-size: 14px; font-weight: 600; }
 
-        .feature-avatar {
-            width: 56px;
-            height: 56px;
-            object-fit: contain;
-            margin-bottom: 12px;
-        }
+/* ---------- reveal ---------- */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-animals img { animation: none; }
+  .feature, .biome, .store-link, .lang-btn { transition: none; }
+}
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            color: #1B5E20;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
-        }
-
-        .hero .tagline {
-            font-size: 24px;
-            font-weight: 600;
-            color: #2E7D32;
-            margin-bottom: 8px;
-        }
-
-        .hero .subtitle {
-            font-size: 18px;
-            color: #558B2F;
-            font-weight: 400;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 32px;
-            color: #1B5E20;
-            margin-bottom: 32px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px;
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            text-align: center;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-emoji {
-            font-size: 40px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .feature-card h3 {
-            font-size: 18px;
-            color: #1B5E20;
-            margin-bottom: 6px;
-        }
-
-        .feature-card p {
-            font-size: 14px;
-            color: #558B2F;
-        }
-
-        /* Download Section */
-        .download {
-            text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
-        }
-
-        .download h2 {
-            font-size: 32px;
-            color: #1B5E20;
-            margin-bottom: 24px;
-        }
-
-        .store-badges {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .store-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 28px;
-            border-radius: 12px;
-            background: #1B5E20;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
-        }
-
-        .store-badge:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(27, 94, 32, 0.4);
-            background: #2E7D32;
-        }
-
-        .store-badge svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-
-        .store-badge-small {
-            display: block;
-            font-size: 11px;
-            font-weight: 400;
-            opacity: 0.9;
-        }
-
-        .store-badge-big {
-            display: block;
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 1.1;
-        }
-
-        /* Footer */
-        footer {
-            background: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-        }
-
-        .footer-links a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #1B5E20;
-            text-decoration: underline;
-        }
-
-        .copyright {
-            font-size: 14px;
-            color: #81C784;
-        }
-
-        /* Language content visibility */
-        .lang-content {
-            display: none;
-        }
-
-        .lang-content.active {
-            display: block;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero .tagline {
-                font-size: 20px;
-            }
-
-            .hero .subtitle {
-                font-size: 16px;
-            }
-
-            .hero-avatars img {
-                width: 56px;
-                height: 56px;
-            }
-
-            .hero-avatars {
-                gap: 10px;
-            }
-
-            .features h2,
-            .download h2 {
-                font-size: 26px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .lang-switcher {
-                gap: 4px;
-                padding: 8px 12px;
-            }
-
-            .lang-btn {
-                padding: 6px 14px;
-                font-size: 13px;
-            }
-
-            .store-badges {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .biomes-grid { grid-template-columns: 1fr; }
+  section { padding: 68px 0; }
+  .hero { padding: 72px 0 110px; }
+}
+@media (max-width: 560px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .biome { flex-direction: column; text-align: center; padding: 32px 22px; }
+  .hero-animals { flex-wrap: wrap; }
+  .topbar-inner { height: 60px; }
+  .biomes, .hero { border-radius: 0 0 36px 36px; }
+}
+</style>
 </head>
 <body>
 
-<!-- Language Switcher -->
-<nav class="lang-switcher" aria-label="Language selector">
-    <button class="lang-btn active" onclick="switchLang('en')" aria-label="English">EN</button>
-    <button class="lang-btn" onclick="switchLang('ru')" aria-label="Russian">RU</button>
-    <button class="lang-btn" onclick="switchLang('pt')" aria-label="Portuguese">PT</button>
-    <button class="lang-btn" onclick="switchLang('es')" aria-label="Spanish">ES</button>
-</nav>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="wordmark" href="#">Wild<span>Pals</span></a>
+    <nav class="langs" aria-label="Language">
+      <button class="lang-btn active" data-lang="en" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" data-lang="ru" onclick="switchLang('ru')">RU</button>
+      <button class="lang-btn" data-lang="pt" onclick="switchLang('pt')">PT</button>
+      <button class="lang-btn" data-lang="es" onclick="switchLang('es')">ES</button>
+    </nav>
+  </div>
+</header>
 
-<!-- ==================== ENGLISH ==================== -->
-<div class="lang-content active" id="lang-en">
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="eyebrow">For children ages 4–6</span>
+      <h1 data-i18n="h1">Explore nature with your little one!</h1>
+      <p class="hero-sub" data-i18n="heroSub">A joyful game about the natural world — four worlds, 56 animals and six educational mini-games.</p>
+      <a class="store-link" href="https://apps.apple.com/app/wildpals/id6776296445" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span>
+          <span class="small" data-i18n="storeSmall">Download on the</span>
+          <span class="big">App Store</span>
+        </span>
+      </a>
+      <div class="hero-animals">
+        <img src="images/fox.png" alt="Fox">
+        <img src="images/whale.png" alt="Whale">
+        <img src="images/lion.png" alt="Lion">
+        <img src="images/penguin.png" alt="Penguin">
+      </div>
+    </div>
+  </section>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-avatars" aria-hidden="true">
-            <img src="images/fox.png" alt="Fox" width="72" height="72">
-            <img src="images/penguin.png" alt="Penguin" width="72" height="72">
-            <img src="images/lion.png" alt="Lion" width="72" height="72">
-            <img src="images/whale.png" alt="Whale" width="72" height="72">
+  <!-- TRUST STRIP -->
+  <div class="wrap trust-inner">
+    <span class="trust-item" data-i18n="trust1">No ads</span>
+    <span class="trust-item" data-i18n="trust2">No tracking</span>
+    <span class="trust-item" data-i18n="trust3">COPPA compliant</span>
+    <span class="trust-item" data-i18n="trust4">Works offline</span>
+  </div>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title reveal" data-i18n="featTitle">Why kids love WildPals</h2>
+      <p class="section-sub reveal" data-i18n="featSub">Everything a curious child needs — and everything a parent expects.</p>
+      <div class="features-grid">
+        <div class="feature reveal">
+          <span class="icon">🦊</span>
+          <h3 data-i18n="f1t">56 amazing animals</h3>
+          <p data-i18n="f1d">Fascinating facts about real animals, with warm hand-crafted illustrations.</p>
         </div>
-        <h1>WildPals</h1>
-        <p class="tagline">Explore Nature with Your Little One!</p>
-        <p class="subtitle">Educational game for children ages 4-6</p>
-    </section>
-
-    <!-- Features -->
-    <section class="features">
-        <h2>Why Kids Love WildPals</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🌍</span>
-                <h3>4 Worlds to Explore</h3>
-                <p>Forest, Ocean, Savanna, and Arctic — each with unique animals and adventures</p>
-            </div>
-            <div class="feature-card">
-                <img class="feature-avatar" src="images/lion.png" alt="" aria-hidden="true">
-                <h3>56 Amazing Animals</h3>
-                <p>Discover fascinating facts about real animals with fun illustrations</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🎮</span>
-                <h3>6 Fun Educational Games</h3>
-                <p>Puzzles, memory, counting, sorting, feeding, and sound recognition</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">📱</span>
-                <h3>Works Offline</h3>
-                <p>No internet needed — play anytime, anywhere</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🔒</span>
-                <h3>No Ads, No Tracking</h3>
-                <p>COPPA compliant. Your child's privacy is our top priority</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">👨‍👩‍👧</span>
-                <h3>Parental Controls</h3>
-                <p>Session timer, progress tracking, and a secure parent zone</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🌐</span>
-                <h3>4 Languages</h3>
-                <p>Available in Russian, English, Portuguese, and Spanish</p>
-            </div>
+        <div class="feature reveal">
+          <span class="icon">🧩</span>
+          <h3 data-i18n="f2t">6 educational games</h3>
+          <p data-i18n="f2d">Puzzles, memory, counting, sorting, feeding and sound recognition.</p>
         </div>
-    </section>
-
-    <!-- Download -->
-    <section class="download">
-        <h2>Download WildPals</h2>
-        <div class="store-badges">
-            <a href="https://apps.apple.com/app/wildpals/id000000000" class="store-badge" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                <div>
-                    <span class="store-badge-small">Download on the</span>
-                    <span class="store-badge-big">App Store</span>
-                </div>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.wildpals.app" class="store-badge" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.49c-.35-.55-.18-1.55-.18-1.55L12.68 12 3 2.06S2.83 1.06 3.18.51C3.5 0 4.28.28 4.28.28l10.94 6.33-3.54 3.39L3.18 23.49zM20.17 10.35l-3.26-1.88-3.87 3.53 3.87 3.53 3.26-1.88c1.17-.67 1.17-2.63 0-3.3zM4.28 23.72s-.78.28-1.1-.23l8.5-8.1 3.54 3.39L4.28 23.72zM12.68 12L4.28.28l10.94 4.94L12.68 12z"/></svg>
-                <div>
-                    <span class="store-badge-small">Get it on</span>
-                    <span class="store-badge-big">Google Play</span>
-                </div>
-            </a>
+        <div class="feature reveal">
+          <span class="icon">📱</span>
+          <h3 data-i18n="f3t">Works offline</h3>
+          <p data-i18n="f3d">No internet needed — play anytime, anywhere.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-use.html">Terms of Use</a>
-            <a href="support.html">Support</a>
+        <div class="feature reveal">
+          <span class="icon">🔒</span>
+          <h3 data-i18n="f4t">Private by design</h3>
+          <p data-i18n="f4d">No ads, no tracking, no data collection. COPPA compliant.</p>
         </div>
-        <p class="copyright">&copy; 2026 Mikhail Lesik. All rights reserved.</p>
-    </footer>
-</div>
-
-<!-- ==================== RUSSIAN ==================== -->
-<div class="lang-content" id="lang-ru">
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-avatars" aria-hidden="true">
-            <img src="images/fox.png" alt="Fox" width="72" height="72">
-            <img src="images/penguin.png" alt="Penguin" width="72" height="72">
-            <img src="images/lion.png" alt="Lion" width="72" height="72">
-            <img src="images/whale.png" alt="Whale" width="72" height="72">
+        <div class="feature reveal">
+          <span class="icon">👨‍👩‍👧</span>
+          <h3 data-i18n="f5t">Parental controls</h3>
+          <p data-i18n="f5d">Session timer, progress tracking and a secure parent zone.</p>
         </div>
-        <h1>WildPals</h1>
-        <p class="tagline">Исследуйте природу вместе с малышом!</p>
-        <p class="subtitle">Развивающая игра для детей 4-6 лет</p>
-    </section>
-
-    <!-- Features -->
-    <section class="features">
-        <h2>Почему детям нравится WildPals</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🌍</span>
-                <h3>4 мира для исследования</h3>
-                <p>Лес, Океан, Саванна и Арктика — в каждом уникальные животные и приключения</p>
-            </div>
-            <div class="feature-card">
-                <img class="feature-avatar" src="images/lion.png" alt="" aria-hidden="true">
-                <h3>56 удивительных животных</h3>
-                <p>Узнавайте интересные факты о настоящих животных с весёлыми иллюстрациями</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🎮</span>
-                <h3>6 увлекательных игр</h3>
-                <p>Пазлы, мемори, счёт, сортировка, кормление и угадай звук</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">📱</span>
-                <h3>Работает без интернета</h3>
-                <p>Интернет не нужен — играйте когда и где угодно</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🔒</span>
-                <h3>Без рекламы и отслеживания</h3>
-                <p>Соответствует COPPA. Конфиденциальность вашего ребёнка — наш приоритет</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">👨‍👩‍👧</span>
-                <h3>Родительский контроль</h3>
-                <p>Таймер сеанса, отслеживание прогресса и защищённая зона для родителей</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🌐</span>
-                <h3>4 языка</h3>
-                <p>Доступно на русском, английском, португальском и испанском</p>
-            </div>
+        <div class="feature reveal">
+          <span class="icon">🌐</span>
+          <h3 data-i18n="f6t">4 languages</h3>
+          <p data-i18n="f6d">Available in English, Russian, Portuguese and Spanish.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Download -->
-    <section class="download">
-        <h2>Скачать WildPals</h2>
-        <div class="store-badges">
-            <a href="https://apps.apple.com/app/wildpals/id000000000" class="store-badge" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                <div>
-                    <span class="store-badge-small">Загрузить из</span>
-                    <span class="store-badge-big">App Store</span>
-                </div>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.wildpals.app" class="store-badge" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.49c-.35-.55-.18-1.55-.18-1.55L12.68 12 3 2.06S2.83 1.06 3.18.51C3.5 0 4.28.28 4.28.28l10.94 6.33-3.54 3.39L3.18 23.49zM20.17 10.35l-3.26-1.88-3.87 3.53 3.87 3.53 3.26-1.88c1.17-.67 1.17-2.63 0-3.3zM4.28 23.72s-.78.28-1.1-.23l8.5-8.1 3.54 3.39L4.28 23.72zM12.68 12L4.28.28l10.94 4.94L12.68 12z"/></svg>
-                <div>
-                    <span class="store-badge-small">Доступно в</span>
-                    <span class="store-badge-big">Google Play</span>
-                </div>
-            </a>
+  <!-- BIOMES -->
+  <section class="biomes">
+    <div class="wrap">
+      <h2 class="section-title reveal" data-i18n="bioTitle">Four worlds to discover</h2>
+      <p class="section-sub reveal" data-i18n="bioSub">Each world has its own animals, colors and adventures.</p>
+      <div class="biomes-grid">
+        <div class="biome biome--forest reveal">
+          <img src="images/fox.png" alt="Fox — Forest">
+          <div>
+            <span class="tag" data-i18n="bioFree">Free forever</span>
+            <h3 data-i18n="b1t">The Forest</h3>
+            <p data-i18n="b1d">Foxes, bears, owls and hedgehogs — 14 animals to meet, free for everyone.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="privacy-policy.html">Политика конфиденциальности</a>
-            <a href="terms-of-use.html">Условия использования</a>
-            <a href="support.html">Поддержка</a>
+        <div class="biome biome--ocean reveal">
+          <img src="images/whale.png" alt="Whale — Ocean">
+          <div>
+            <h3 data-i18n="b2t">The Ocean</h3>
+            <p data-i18n="b2d">Whales, dolphins, sea turtles and the wonders of the deep blue sea.</p>
+          </div>
         </div>
-        <p class="copyright">&copy; 2026 Михаил Лесик. Все права защищены.</p>
-    </footer>
-</div>
-
-<!-- ==================== PORTUGUESE ==================== -->
-<div class="lang-content" id="lang-pt">
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-avatars" aria-hidden="true">
-            <img src="images/fox.png" alt="Fox" width="72" height="72">
-            <img src="images/penguin.png" alt="Penguin" width="72" height="72">
-            <img src="images/lion.png" alt="Lion" width="72" height="72">
-            <img src="images/whale.png" alt="Whale" width="72" height="72">
+        <div class="biome biome--savanna reveal">
+          <img src="images/lion.png" alt="Lion — Savanna">
+          <div>
+            <h3 data-i18n="b3t">The Savanna</h3>
+            <p data-i18n="b3d">Lions, elephants, giraffes and the golden grasslands of Africa.</p>
+          </div>
         </div>
-        <h1>WildPals</h1>
-        <p class="tagline">Explore a natureza com o seu pequeno!</p>
-        <p class="subtitle">Jogo educativo para criancas de 4 a 6 anos</p>
-    </section>
-
-    <!-- Features -->
-    <section class="features">
-        <h2>Por que as criancas adoram o WildPals</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🌍</span>
-                <h3>4 mundos para explorar</h3>
-                <p>Floresta, Oceano, Savana e Artico — cada um com animais e aventuras unicos</p>
-            </div>
-            <div class="feature-card">
-                <img class="feature-avatar" src="images/lion.png" alt="" aria-hidden="true">
-                <h3>56 animais incriveis</h3>
-                <p>Descubra fatos fascinantes sobre animais reais com ilustracoes divertidas</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🎮</span>
-                <h3>6 jogos educativos divertidos</h3>
-                <p>Quebra-cabecas, memoria, contagem, classificacao, alimentacao e sons</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">📱</span>
-                <h3>Funciona offline</h3>
-                <p>Sem necessidade de internet — jogue a qualquer hora, em qualquer lugar</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🔒</span>
-                <h3>Sem anuncios, sem rastreamento</h3>
-                <p>Em conformidade com a COPPA. A privacidade do seu filho e nossa prioridade</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">👨‍👩‍👧</span>
-                <h3>Controle parental</h3>
-                <p>Temporizador de sessao, acompanhamento do progresso e zona segura para pais</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🌐</span>
-                <h3>4 idiomas</h3>
-                <p>Disponivel em russo, ingles, portugues e espanhol</p>
-            </div>
+        <div class="biome biome--arctic reveal">
+          <img src="images/penguin.png" alt="Penguin — Arctic">
+          <div>
+            <h3 data-i18n="b4t">The Arctic</h3>
+            <p data-i18n="b4d">Penguins, polar bears, seals and the quiet beauty of the snow.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Download -->
-    <section class="download">
-        <h2>Baixar WildPals</h2>
-        <div class="store-badges">
-            <a href="https://apps.apple.com/app/wildpals/id000000000" class="store-badge" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                <div>
-                    <span class="store-badge-small">Baixar na</span>
-                    <span class="store-badge-big">App Store</span>
-                </div>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.wildpals.app" class="store-badge" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.49c-.35-.55-.18-1.55-.18-1.55L12.68 12 3 2.06S2.83 1.06 3.18.51C3.5 0 4.28.28 4.28.28l10.94 6.33-3.54 3.39L3.18 23.49zM20.17 10.35l-3.26-1.88-3.87 3.53 3.87 3.53 3.26-1.88c1.17-.67 1.17-2.63 0-3.3zM4.28 23.72s-.78.28-1.1-.23l8.5-8.1 3.54 3.39L4.28 23.72zM12.68 12L4.28.28l10.94 4.94L12.68 12z"/></svg>
-                <div>
-                    <span class="store-badge-small">Disponivel no</span>
-                    <span class="store-badge-big">Google Play</span>
-                </div>
-            </a>
+  <!-- DOWNLOAD -->
+  <section class="download">
+    <div class="wrap">
+      <div class="download-card reveal">
+        <h2 class="section-title" data-i18n="dlTitle">Ready to explore?</h2>
+        <p class="section-sub" data-i18n="dlSub">Free to download. The Forest world is free forever.</p>
+        <a class="store-link" href="https://apps.apple.com/app/wildpals/id6776296445" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span>
+            <span class="small" data-i18n="storeSmall2">Download on the</span>
+            <span class="big">App Store</span>
+          </span>
+        </a>
+        <div class="download-animals">
+          <img src="images/fox.png" alt="">
+          <img src="images/whale.png" alt="">
+          <img src="images/lion.png" alt="">
+          <img src="images/penguin.png" alt="">
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="privacy-policy.html">Politica de Privacidade</a>
-            <a href="terms-of-use.html">Termos de Uso</a>
-            <a href="support.html">Suporte</a>
-        </div>
-        <p class="copyright">&copy; 2026 Mikhail Lesik. Todos os direitos reservados.</p>
-    </footer>
-</div>
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-links">
+      <a href="privacy-policy.html" data-i18n="ftPrivacy">Privacy Policy</a>
+      <a href="terms-of-use.html" data-i18n="ftTerms">Terms of Use</a>
+      <a href="support.html" data-i18n="ftSupport">Support</a>
+    </div>
+    <span class="copyright" data-i18n="ftCopy">© 2026 Mikhail Lesik. All rights reserved.</span>
+  </div>
+</footer>
 
-<!-- ==================== SPANISH ==================== -->
-<div class="lang-content" id="lang-es">
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-avatars" aria-hidden="true">
-            <img src="images/fox.png" alt="Fox" width="72" height="72">
-            <img src="images/penguin.png" alt="Penguin" width="72" height="72">
-            <img src="images/lion.png" alt="Lion" width="72" height="72">
-            <img src="images/whale.png" alt="Whale" width="72" height="72">
-        </div>
-        <h1>WildPals</h1>
-        <p class="tagline">!Explora la naturaleza con tu pequeno!</p>
-        <p class="subtitle">Juego educativo para ninos de 4 a 6 anos</p>
-    </section>
-
-    <!-- Features -->
-    <section class="features">
-        <h2>Por que a los ninos les encanta WildPals</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🌍</span>
-                <h3>4 mundos por explorar</h3>
-                <p>Bosque, Oceano, Sabana y Artico — cada uno con animales y aventuras unicos</p>
-            </div>
-            <div class="feature-card">
-                <img class="feature-avatar" src="images/lion.png" alt="" aria-hidden="true">
-                <h3>56 animales increibles</h3>
-                <p>Descubre datos fascinantes sobre animales reales con divertidas ilustraciones</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🎮</span>
-                <h3>6 juegos educativos divertidos</h3>
-                <p>Rompecabezas, memoria, conteo, clasificacion, alimentacion y sonidos</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">📱</span>
-                <h3>Funciona sin conexion</h3>
-                <p>Sin necesidad de internet — juega en cualquier momento y lugar</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🔒</span>
-                <h3>Sin anuncios, sin rastreo</h3>
-                <p>Cumple con COPPA. La privacidad de tu hijo es nuestra maxima prioridad</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">👨‍👩‍👧</span>
-                <h3>Control parental</h3>
-                <p>Temporizador de sesion, seguimiento del progreso y zona segura para padres</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-emoji" aria-hidden="true">🌐</span>
-                <h3>4 idiomas</h3>
-                <p>Disponible en ruso, ingles, portugues y espanol</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download -->
-    <section class="download">
-        <h2>Descargar WildPals</h2>
-        <div class="store-badges">
-            <a href="https://apps.apple.com/app/wildpals/id000000000" class="store-badge" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                <div>
-                    <span class="store-badge-small">Descargar en</span>
-                    <span class="store-badge-big">App Store</span>
-                </div>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.wildpals.app" class="store-badge" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.49c-.35-.55-.18-1.55-.18-1.55L12.68 12 3 2.06S2.83 1.06 3.18.51C3.5 0 4.28.28 4.28.28l10.94 6.33-3.54 3.39L3.18 23.49zM20.17 10.35l-3.26-1.88-3.87 3.53 3.87 3.53 3.26-1.88c1.17-.67 1.17-2.63 0-3.3zM4.28 23.72s-.78.28-1.1-.23l8.5-8.1 3.54 3.39L4.28 23.72zM12.68 12L4.28.28l10.94 4.94L12.68 12z"/></svg>
-                <div>
-                    <span class="store-badge-small">Disponible en</span>
-                    <span class="store-badge-big">Google Play</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="privacy-policy.html">Politica de Privacidad</a>
-            <a href="terms-of-use.html">Terminos de Uso</a>
-            <a href="support.html">Soporte</a>
-        </div>
-        <p class="copyright">&copy; 2026 Mikhail Lesik. Todos los derechos reservados.</p>
-    </footer>
-</div>
-
-<!-- Language Switcher Script -->
 <script>
-    function switchLang(lang) {
-        // Hide all language content
-        document.querySelectorAll('.lang-content').forEach(function(el) {
-            el.classList.remove('active');
-        });
-        // Deactivate all buttons
-        document.querySelectorAll('.lang-btn').forEach(function(btn) {
-            btn.classList.remove('active');
-        });
-        // Show selected language content
-        var content = document.getElementById('lang-' + lang);
-        if (content) {
-            content.classList.add('active');
-        }
-        // Activate selected button
-        document.querySelectorAll('.lang-btn').forEach(function(btn) {
-            if (btn.textContent.trim() === lang.toUpperCase()) {
-                btn.classList.add('active');
-            }
-        });
-        // Update html lang attribute
-        var langMap = { en: 'en', ru: 'ru', pt: 'pt-BR', es: 'es' };
-        document.documentElement.lang = langMap[lang] || lang;
-        // Save preference
-        try {
-            localStorage.setItem('wildpals-lang', lang);
-        } catch (e) {
-            // localStorage may not be available
-        }
-    }
+var I18N = {
+  en: {
+    eyebrow: "For children ages 4–6",
+    h1: "Explore nature with your little one!",
+    heroSub: "A joyful game about the natural world — four worlds, 56 animals and six educational mini-games.",
+    storeSmall: "Download on the", storeSmall2: "Download on the",
+    trust1: "No ads", trust2: "No tracking", trust3: "COPPA compliant", trust4: "Works offline",
+    featTitle: "Why kids love WildPals",
+    featSub: "Everything a curious child needs — and everything a parent expects.",
+    f1t: "56 amazing animals", f1d: "Fascinating facts about real animals, with warm hand-crafted illustrations.",
+    f2t: "6 educational games", f2d: "Puzzles, memory, counting, sorting, feeding and sound recognition.",
+    f3t: "Works offline", f3d: "No internet needed — play anytime, anywhere.",
+    f4t: "Private by design", f4d: "No ads, no tracking, no data collection. COPPA compliant.",
+    f5t: "Parental controls", f5d: "Session timer, progress tracking and a secure parent zone.",
+    f6t: "4 languages", f6d: "Available in English, Russian, Portuguese and Spanish.",
+    bioTitle: "Four worlds to discover",
+    bioSub: "Each world has its own animals, colors and adventures.",
+    bioFree: "Free forever",
+    b1t: "The Forest", b1d: "Foxes, bears, owls and hedgehogs — 14 animals to meet, free for everyone.",
+    b2t: "The Ocean", b2d: "Whales, dolphins, sea turtles and the wonders of the deep blue sea.",
+    b3t: "The Savanna", b3d: "Lions, elephants, giraffes and the golden grasslands of Africa.",
+    b4t: "The Arctic", b4d: "Penguins, polar bears, seals and the quiet beauty of the snow.",
+    dlTitle: "Ready to explore?",
+    dlSub: "Free to download. The Forest world is free forever.",
+    ftPrivacy: "Privacy Policy", ftTerms: "Terms of Use", ftSupport: "Support",
+    ftCopy: "© 2026 Mikhail Lesik. All rights reserved."
+  },
+  ru: {
+    eyebrow: "Для детей 4–6 лет",
+    h1: "Исследуйте природу вместе с малышом!",
+    heroSub: "Радостная игра о природе — четыре мира, 56 животных и шесть развивающих мини-игр.",
+    storeSmall: "Загрузите в", storeSmall2: "Загрузите в",
+    trust1: "Без рекламы", trust2: "Без слежки", trust3: "Соответствует COPPA", trust4: "Работает без интернета",
+    featTitle: "Почему детям нравится WildPals",
+    featSub: "Всё, что нужно любознательному ребёнку — и всё, чего ждёт родитель.",
+    f1t: "56 удивительных животных", f1d: "Интересные факты о настоящих животных с тёплыми иллюстрациями.",
+    f2t: "6 развивающих игр", f2d: "Пазлы, мемори, счёт, сортировка, кормление и угадай звук.",
+    f3t: "Работает без интернета", f3d: "Интернет не нужен — играйте когда и где угодно.",
+    f4t: "Приватность по умолчанию", f4d: "Без рекламы, слежки и сбора данных. Соответствует COPPA.",
+    f5t: "Родительский контроль", f5d: "Таймер сеанса, отслеживание прогресса и защищённая зона для родителей.",
+    f6t: "4 языка", f6d: "Доступно на русском, английском, португальском и испанском.",
+    bioTitle: "Четыре мира для открытий",
+    bioSub: "У каждого мира — свои животные, цвета и приключения.",
+    bioFree: "Бесплатно навсегда",
+    b1t: "Лес", b1d: "Лисы, медведи, совы и ежи — 14 животных, бесплатно для всех.",
+    b2t: "Океан", b2d: "Киты, дельфины, морские черепахи и чудеса глубокого синего моря.",
+    b3t: "Саванна", b3d: "Львы, слоны, жирафы и золотые травы Африки.",
+    b4t: "Арктика", b4d: "Пингвины, белые медведи, тюлени и тихая красота снегов.",
+    dlTitle: "Готовы к приключениям?",
+    dlSub: "Загрузка бесплатна. Мир «Лес» — бесплатно навсегда.",
+    ftPrivacy: "Политика конфиденциальности", ftTerms: "Условия использования", ftSupport: "Поддержка",
+    ftCopy: "© 2026 Михаил Лесик. Все права защищены."
+  },
+  pt: {
+    eyebrow: "Para crianças de 4 a 6 anos",
+    h1: "Explore a natureza com o seu pequeno!",
+    heroSub: "Um jogo alegre sobre a natureza — quatro mundos, 56 animais e seis minijogos educativos.",
+    storeSmall: "Baixar na", storeSmall2: "Baixar na",
+    trust1: "Sem anúncios", trust2: "Sem rastreamento", trust3: "Em conformidade com a COPPA", trust4: "Funciona offline",
+    featTitle: "Por que as crianças adoram o WildPals",
+    featSub: "Tudo o que uma criança curiosa precisa — e tudo o que um pai espera.",
+    f1t: "56 animais incríveis", f1d: "Fatos fascinantes sobre animais reais, com ilustrações acolhedoras.",
+    f2t: "6 jogos educativos", f2d: "Quebra-cabeças, memória, contagem, classificação, alimentação e sons.",
+    f3t: "Funciona offline", f3d: "Sem necessidade de internet — jogue a qualquer hora, em qualquer lugar.",
+    f4t: "Privacidade por padrão", f4d: "Sem anúncios, sem rastreamento, sem coleta de dados. Em conformidade com a COPPA.",
+    f5t: "Controle parental", f5d: "Temporizador de sessão, acompanhamento do progresso e zona segura para os pais.",
+    f6t: "4 idiomas", f6d: "Disponível em português, inglês, russo e espanhol.",
+    bioTitle: "Quatro mundos para descobrir",
+    bioSub: "Cada mundo tem seus próprios animais, cores e aventuras.",
+    bioFree: "Grátis para sempre",
+    b1t: "A Floresta", b1d: "Raposas, ursos, corujas e ouriços — 14 animais para conhecer, grátis para todos.",
+    b2t: "O Oceano", b2d: "Baleias, golfinhos, tartarugas marinhas e as maravilhas do mar azul profundo.",
+    b3t: "A Savana", b3d: "Leões, elefantes, girafas e as planícies douradas da África.",
+    b4t: "O Ártico", b4d: "Pinguins, ursos polares, focas e a beleza tranquila da neve.",
+    dlTitle: "Pronto para explorar?",
+    dlSub: "Download gratuito. O mundo da Floresta é grátis para sempre.",
+    ftPrivacy: "Política de Privacidade", ftTerms: "Termos de Uso", ftSupport: "Suporte",
+    ftCopy: "© 2026 Mikhail Lesik. Todos os direitos reservados."
+  },
+  es: {
+    eyebrow: "Para niños de 4 a 6 años",
+    h1: "¡Explora la naturaleza con tu pequeño!",
+    heroSub: "Un juego alegre sobre la naturaleza — cuatro mundos, 56 animales y seis minijuegos educativos.",
+    storeSmall: "Descargar en", storeSmall2: "Descargar en",
+    trust1: "Sin anuncios", trust2: "Sin rastreo", trust3: "Cumple con COPPA", trust4: "Funciona sin conexión",
+    featTitle: "Por qué a los niños les encanta WildPals",
+    featSub: "Todo lo que necesita un niño curioso — y todo lo que espera un padre.",
+    f1t: "56 animales increíbles", f1d: "Datos fascinantes sobre animales reales, con cálidas ilustraciones.",
+    f2t: "6 juegos educativos", f2d: "Rompecabezas, memoria, conteo, clasificación, alimentación y sonidos.",
+    f3t: "Funciona sin conexión", f3d: "No necesita internet — juega en cualquier momento y lugar.",
+    f4t: "Privacidad por diseño", f4d: "Sin anuncios, sin rastreo, sin recopilación de datos. Cumple con COPPA.",
+    f5t: "Control parental", f5d: "Temporizador de sesión, seguimiento del progreso y zona segura para padres.",
+    f6t: "4 idiomas", f6d: "Disponible en español, inglés, ruso y portugués.",
+    bioTitle: "Cuatro mundos por descubrir",
+    bioSub: "Cada mundo tiene sus propios animales, colores y aventuras.",
+    bioFree: "Gratis para siempre",
+    b1t: "El Bosque", b1d: "Zorros, osos, búhos y erizos — 14 animales para conocer, gratis para todos.",
+    b2t: "El Océano", b2d: "Ballenas, delfines, tortugas marinas y las maravillas del mar azul profundo.",
+    b3t: "La Sabana", b3d: "Leones, elefantes, jirafas y las praderas doradas de África.",
+    b4t: "El Ártico", b4d: "Pingüinos, osos polares, focas y la belleza serena de la nieve.",
+    dlTitle: "¿Listos para explorar?",
+    dlSub: "Descarga gratuita. El mundo del Bosque es gratis para siempre.",
+    ftPrivacy: "Política de Privacidad", ftTerms: "Términos de Uso", ftSupport: "Soporte",
+    ftCopy: "© 2026 Mikhail Lesik. Todos los derechos reservados."
+  }
+};
 
-    // Restore saved language or detect from browser
-    (function() {
-        var saved = null;
-        try {
-            saved = localStorage.getItem('wildpals-lang');
-        } catch (e) {}
+function switchLang(lang) {
+  var dict = I18N[lang] || I18N.en;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (dict[key]) el.textContent = dict[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('wildpals-lang', lang); } catch (e) {}
+}
 
-        if (saved && document.getElementById('lang-' + saved)) {
-            switchLang(saved);
-        } else {
-            var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-            if (browserLang.startsWith('ru')) {
-                switchLang('ru');
-            } else if (browserLang.startsWith('pt')) {
-                switchLang('pt');
-            } else if (browserLang.startsWith('es')) {
-                switchLang('es');
-            }
-            // English is default, already active
-        }
-    })();
+(function() {
+  var saved = null;
+  try { saved = localStorage.getItem('wildpals-lang'); } catch (e) {}
+  if (saved && I18N[saved]) {
+    switchLang(saved);
+  } else {
+    var bl = (navigator.language || 'en').toLowerCase();
+    if (bl.indexOf('ru') === 0) switchLang('ru');
+    else if (bl.indexOf('pt') === 0) switchLang('pt');
+    else if (bl.indexOf('es') === 0) switchLang('es');
+  }
+})();
+
+(function() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+})();
 </script>
 
 </body>

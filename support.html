@@ -5,160 +5,131 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support — WildPals</title>
 <style>
-  * { box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
-    color: #333;
-    background: #FAFAFA;
-  }
-  h1 { color: #2E7D32; margin-bottom: 4px; }
-  h2 { color: #4CAF50; margin-top: 2em; }
-  h3 { color: #616161; }
-  .subtitle { color: #666; margin-top: 0; margin-bottom: 24px; }
-  .highlight {
-    background: #E8F5E9;
-    padding: 12px 16px;
-    border-radius: 8px;
-    margin: 16px 0;
-  }
-  .lang-switch {
-    text-align: center;
-    margin-bottom: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-  .lang-switch button {
-    padding: 8px 16px;
-    border-radius: 8px;
-    background: #E8F5E9;
-    color: #2E7D32;
-    border: 2px solid transparent;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s;
-  }
-  .lang-switch button:hover {
-    background: #C8E6C9;
-  }
-  .lang-switch button.active {
-    background: #4CAF50;
-    color: #fff;
-    border-color: #2E7D32;
-  }
-  .contact-card {
-    background: #E8F5E9;
-    border-radius: 12px;
-    padding: 24px;
-    text-align: center;
-    margin: 24px 0;
-  }
-  .contact-card .email-link {
-    display: inline-block;
-    background: #4CAF50;
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 32px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 12px;
-    transition: background 0.2s;
-  }
-  .contact-card .email-link:hover {
-    background: #388E3C;
-  }
-  .contact-card p { margin: 6px 0; }
-  .faq-item {
-    background: #fff;
-    border: 1px solid #E0E0E0;
-    border-radius: 10px;
-    margin-bottom: 12px;
-    overflow: hidden;
-  }
-  .faq-question {
-    padding: 16px 20px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #2E7D32;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    user-select: none;
-  }
-  .faq-question:hover { background: #F1F8E9; }
-  .faq-question::after {
-    content: '+';
-    font-size: 20px;
-    font-weight: bold;
-    color: #4CAF50;
-    flex-shrink: 0;
-    margin-left: 12px;
-    transition: transform 0.2s;
-  }
-  .faq-item.open .faq-question::after {
-    content: '\2212';
-  }
-  .faq-answer {
-    display: none;
-    padding: 0 20px 16px 20px;
-    color: #555;
-    line-height: 1.7;
-  }
-  .faq-item.open .faq-answer { display: block; }
-  .troubleshooting-step {
-    background: #fff;
-    border-left: 4px solid #4CAF50;
-    padding: 12px 16px;
-    margin: 12px 0;
-    border-radius: 0 8px 8px 0;
-  }
-  .troubleshooting-step strong { color: #2E7D32; }
-  .links-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 16px 0;
-  }
-  .links-section a {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #E8F5E9;
-    color: #2E7D32;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: background 0.2s;
-  }
-  .links-section a:hover { background: #C8E6C9; }
-  ul { padding-left: 20px; }
-  footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #E0E0E0;
-    color: #9E9E9E;
-    font-size: 14px;
-    text-align: center;
-  }
-  .lang-content { display: none; }
-  .lang-content.active { display: block; }
-
-  @media (max-width: 480px) {
-    body { padding: 16px; }
-    .contact-card { padding: 16px; }
-    .faq-question { padding: 14px 16px; font-size: 15px; }
-    .faq-answer { padding: 0 16px 14px 16px; }
-  }
+:root {
+  --bg: #FDF8EE; --ink: #3A4A3E; --muted: #6E7D70;
+  --green: #58B368; --green-dark: #3E8E4E; --green-deep: #2D6A4F;
+  --sun: #FFC94D; --line: #EDE5D3; --radius: 22px;
+  --font: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font); background: var(--bg); color: var(--ink);
+  line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased;
+}
+/* topbar */
+.site-topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(253,248,238,.9);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.site-topbar-inner {
+  max-width: 820px; margin: 0 auto; padding: 0 24px; height: 62px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.site-wordmark {
+  font-weight: 900; font-size: 22px; color: var(--green-deep); text-decoration: none;
+}
+.site-back {
+  font-size: 13px; font-weight: 800; color: var(--green-deep); text-decoration: none;
+  background: #fff; padding: 7px 16px; border-radius: 999px;
+  box-shadow: 0 3px 0 rgba(58,74,62,.12); transition: transform .15s;
+}
+.site-back:hover { transform: translateY(-2px); }
+/* page container */
+.page, .container { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
+/* typography */
+h1 {
+  font-weight: 900; letter-spacing: -.02em; color: var(--green-deep);
+  font-size: clamp(32px, 5vw, 44px); line-height: 1.12; margin-bottom: 10px;
+}
+h2 {
+  font-weight: 800; letter-spacing: -.01em; color: var(--green-deep);
+  font-size: 23px; margin: 42px 0 14px;
+}
+h3 { font-size: 17px; font-weight: 800; margin: 26px 0 10px; }
+p { margin-bottom: 14px; }
+ul, ol { margin: 0 0 16px 22px; }
+li { margin-bottom: 6px; }
+a { color: var(--green-dark); font-weight: 700; }
+a:hover { color: var(--green-deep); }
+strong { font-weight: 800; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 15px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { font-weight: 800; }
+.subtitle { color: var(--muted); font-weight: 600; font-size: 17px; margin-bottom: 6px; }
+.date, .effective-date { color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+.header { text-align: left; margin-bottom: 8px; }
+.header .app-icon, .app-icon { display: none; }
+.header h1 { margin-bottom: 6px; }
+/* language switcher */
+.lang-switch, .lang-switcher { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 38px; }
+.lang-switch button, .lang-switcher .lang-btn {
+  font-family: var(--font); font-size: 13px; font-weight: 800;
+  padding: 8px 16px; border: none; border-radius: 999px;
+  background: #fff; color: var(--muted); cursor: pointer;
+  box-shadow: 0 3px 0 rgba(58,74,62,.12);
+  transition: transform .15s, background .2s, color .2s;
+}
+.lang-switch button:hover, .lang-switcher .lang-btn:hover { transform: translateY(-2px); color: var(--ink); }
+.lang-switch button.active, .lang-switcher .lang-btn.active {
+  background: var(--green); color: #fff; box-shadow: 0 3px 0 var(--green-dark);
+}
+/* lang content visibility */
+.lang-content, .lang-section { display: none; }
+.lang-content.active, .lang-section.active { display: block; }
+/* boxes */
+.highlight, .summary-box, .card, .contact-box, .contact-card, .troubleshooting-step {
+  background: #fff; border-radius: var(--radius);
+  padding: 22px 24px; margin: 18px 0 24px;
+  box-shadow: 0 5px 0 rgba(58,74,62,.08);
+}
+.summary-box, .highlight { border-left: 5px solid var(--green); }
+.contact-card { text-align: center; padding: 32px 24px; border-left: none; }
+.email-link {
+  display: inline-block; margin-top: 8px; font-size: 18px; font-weight: 900;
+  color: #fff; background: var(--green); padding: 12px 26px; border-radius: 999px;
+  text-decoration: none; box-shadow: 0 5px 0 var(--green-dark);
+  transition: transform .15s;
+}
+.email-link:hover { transform: translateY(-2px); color: #fff; }
+/* faq */
+.faq-item {
+  background: #fff; border-radius: var(--radius); padding: 18px 22px;
+  margin-bottom: 14px; box-shadow: 0 5px 0 rgba(58,74,62,.08);
+}
+.faq-question { font-weight: 800; margin-bottom: 8px; color: var(--green-deep); }
+.faq-answer { color: var(--muted); }
+.faq-answer p:last-child { margin-bottom: 0; }
+.links-section { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+.no-collect-list li { margin-bottom: 8px; }
+.section-icon, .icon { margin-right: 6px; }
+/* footer */
+.footer, .site-footer {
+  max-width: 820px; margin: 0 auto; padding: 28px 24px 56px;
+  border-top: 1px solid var(--line); color: var(--muted); font-size: 14px;
+  font-weight: 600; text-align: center;
+}
+.site-footer a { color: var(--muted); text-decoration: none; font-weight: 800; margin: 0 12px; }
+.site-footer a:hover { color: var(--green-deep); }
+@media (max-width: 560px) {
+  .container, .page { padding: 32px 18px 60px; }
+  h2 { font-size: 20px; }
+}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<header class="site-topbar">
+  <div class="site-topbar-inner">
+    <a class="site-wordmark" href="index.html">WildPals</a>
+    <a class="site-back" href="index.html">&larr; Home</a>
+  </div>
+</header>
+
+<div class="page">
 <div class="lang-switch">
   <button onclick="switchLang('en')" id="btn-en" class="active">English</button>
   <button onclick="switchLang('ru')" id="btn-ru">Русский</button>
@@ -996,6 +967,15 @@
   <p>&copy; 2026 WildPals. Todos los derechos reservados.</p>
 </footer>
 
+</div>
+
+</div>
+
+<div class="site-footer">
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-of-use.html">Terms of Use</a>
+  <a href="support.html">Support</a>
+  <div style="margin-top:10px">&copy; 2026 Mikhail Lesik</div>
 </div>
 
 <script>
